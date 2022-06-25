@@ -7,12 +7,9 @@ $('.buttons-wrapper .pauseButton').click(function () {
     timer.pause();
 });
 
-$('.buttons-wrapper .stopButton').click(function () {
-    timer.stop();
-});
-
 $('.buttons-wrapper .resetButton').click(function () {
     timer.reset();
+    timer.stop();
 });
 
 timer.addEventListener('secondsUpdated', function (e) {
