@@ -1,5 +1,9 @@
 # PuzzLing and Scoring System 
 ## Mockup Preview
+This is an python supported web application using the Flask backend. Make sure you already have the Flask installed on your computer, and then simply run the app.py to render the server.
+``` Python
+python app.py
+```
 ### Folder Structure
 ```sh 
 .
