@@ -9,7 +9,16 @@
     <link rel= "stylesheet" type= "text/css" href= "../static/styles/style.css">
 
 </head>
+
 <body>
+    <div id="language-switch">
+        <div class="select-language"><a href="/somali/" onclick="setValueInLocalStorage('locale', 'Somali');">Somali</a></div>
+        <div class="select-language active-language"><a href="/xhosa/" onclick="setValueInLocalStorage('locale', 'Xhosa');">Xhosa</a></div>
+        <div class="select-language active-language"><a href="/pashto/" onclick="setValueInLocalStorage('locale', 'Pashto');">Pashto</a></div>
+        <div class="select-language active-language"><a href="/twi/" onclick="setValueInLocalStorage('locale', 'Twi');">Twi</a></div>
+        <div class="select-language active-language"><a href="/ukrainian/" onclick="setValueInLocalStorage('locale', 'Ukrainian');">Xhosa</a></div>
+    </div>
+
 
     <header>
         <div class="logo">
@@ -22,7 +31,6 @@
             </ul>
         </nav>
     </header>
-
 
     <main>
         <div class="heading" >
@@ -39,6 +47,7 @@
             <div>
                 <button class="startButton">Start</button>
                 <button class="pauseButton" >Pause</button>
+                <button class="stopButton">Stop</button>
                 <button class="resetButton">Reset</button>
                 <button>Help</button>
             </div>
