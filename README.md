@@ -1,5 +1,5 @@
 # PuzzLing and Scoring System 
-[**Team R&R (Role and Responsibility)**](https://github.com/wenet-e2e/wenet/blob/main/README_CN.md)
+[**Team R&R (Role and Responsibility)**](https://github.com/linguisticsjusticeleague/PuzzLing-and-Scoring/blob/main/team_roster.md)
 
 ## Mockup Preview
 This is an python supported web application using the Flask backend. Make sure you already have the Flask installed on your computer, and then simply run the app.py to render the server.
