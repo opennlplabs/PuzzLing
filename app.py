@@ -6,6 +6,7 @@ from flask import (
     send_from_directory,
     render_template,
     escape,
+    session,
 )
 import struct
 import sqlite3
@@ -18,10 +19,26 @@ import json
 import argparse
 import random
 
+#import torch
+#from scipy.spatial.distance import cosine
+#from transformers import AutoModel, AutoTokenizer
 
-sentence_mapping = ''
+
+#tokenizer = AutoTokenizer.from_pretrained("princeton-nlp/sup-simcse-bert-base-uncased")
+#model = AutoModel.from_pretrained("princeton-nlp/sup-simcse-bert-base-uncased")
+
+def sentence_mapping(sentence):
+    inputs = tokenizer(sentence, padding=True, truncation=True, return_tensors="pt")
+    with torch.no_grad():
+        embeddings = model(**inputs, output_hidden_states=True, return_dict=True).pooler_output
+
+    return embeddings
 
 flask_app = Flask(__name__)
+flask_app.secret_key = 'any random string'
+
+def l2norm(x, dim=-1):
+    return x / x.norm(2, dim=dim, keepdim=True).clamp(min=1e-6)
 
 @flask_app.route("/")
 def Home():
@@ -33,35 +50,42 @@ def Home():
         # convert the list output into string
         question = " "
         question = question.join(lines)
+    session['question'] = question
     # render the question into the index web
     return render_template("index.html", question="{}".format(question))
 
 
 @flask_app.route("/predict", methods=['GET', 'POST'])
 def predict():
-    if request.method == 'GET':
-        # retrieve the answer input from the user text-ins
-        sentence = request.form.get('inputText')
-        translatedtext = escape(sentence)#translate(escape(sentence))
-        target = request.form.get('inputText')
-        prediction_score = score(translatedtext, target)
-        # ouput the correlation function
-        return render_template("score.html", prediction_text = "{}".format(prediction_score))
+    # retrieve the answer input from the user text-ins
+    sentence = request.form.get('inputText')
+    target = request.args.get('question')#request.args.get('question')
+    target = escape(target)#translate(escape(target))
+    prediction_score = calc_score(sentence, target)
+    # ouput the correlation function
+    return render_template("score.html", prediction_text = "{}".format(prediction_score))
 
 
+def calc_score(inputs, target):
+    if isinstance(target, str):
+        target = [target]
+        inputs = [inputs]
 
-def score(inputs, target):
+    assert len(target) == 1
+    assert len(inputs) == 1
     #inputs_repre = sentence_mapping(inputs)
     #target_repre = sentence_mapping(target)
 
     #score = similarity(inputs_repre, target_repre)
+
     score = random.random()
 
     return score
 
 
 def similarity(inputs_repre, target_repre):
-    pass
+    """Cosine similarity between all the inputs and target pairs"""
+    return inputs_repre.mm(target_repre.t()).item()
 
 
 url = 'https://platform.neuralspace.ai/api/translation/v1/annotated/translate'
