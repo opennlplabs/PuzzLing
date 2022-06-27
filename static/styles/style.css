@@ -220,63 +220,63 @@ button:hover {
     }
 
 
-    #language-switch {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 400px;
-        min-height: 40px;
-        /* Works in Webkit browsers only if we add this property. (Feb 2019) */
-        line-height: 100%;
-        margin: 0 auto;
-        margin-bottom: 4px;
-        padding: 4px 8px 4px 8px;
-        border-radius: 5px;
-        border: none;
-        background-color: #FFF;
-        font-size: 16px;
-        font-family: arial, helvetica, sans-serif;
-    }
+#language-switch {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 400px;
+    min-height: 40px;
+    /* Works in Webkit browsers only if we add this property. (Feb 2019) */
+    line-height: 100%;
+    margin: 0 auto;
+    margin-bottom: 4px;
+    padding: 4px 8px 4px 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFF;
+    font-size: 16px;
+    font-family: arial, helvetica, sans-serif;
+}
 
 
 
-    .select-language {
-        padding: 4px 8px 4px 8px;
-        border-radius: 5px;
-        color: #333;
-        font-weight: normal;
-        text-align: center;
-    }
-    .select-language:hover {
-        background-color: #F5AF37;
-        color: #333;
-    }
-    .select-language a {
-        text-decoration: none;
-        color: inherit;
-    }
-    .select-language a:visited {
-        text-decoration: none;
-        color: inherit;
-    }
+.select-language {
+    padding: 4px 8px 4px 8px;
+    border-radius: 5px;
+    color: #333;
+    font-weight: normal;
+    text-align: center;
+}
+.select-language:hover {
+    background-color: #F5AF37;
+    color: #333;
+}
+.select-language a {
+    text-decoration: none;
+    color: inherit;
+}
+.select-language a:visited {
+    text-decoration: none;
+    color: inherit;
+}
 
-    .select-language {
-        padding: 4px 8px 4px 8px;
-        border-radius: 5px;
-        color: #333;
-        font-weight: normal;
-        text-align: center;
-    }
-    .select-language:hover {
-        background-color: #91c856;
-        color: #333;
-    }
-    .select-language a {
-        text-decoration: none;
-        color: inherit;
-    }
-    .select-language a:visited {
-        text-decoration: none;
-        color: inherit;
-    }
+.select-language {
+    padding: 4px 8px 4px 8px;
+    border-radius: 5px;
+    color: #333;
+    font-weight: normal;
+    text-align: center;
+}
+.select-language:hover {
+    background-color: #91c856;
+    color: #333;
+}
+.select-language a {
+    text-decoration: none;
+    color: inherit;
+}
+.select-language a:visited {
+    text-decoration: none;
+    color: inherit;
+}
