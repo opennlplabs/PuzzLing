@@ -1,7 +1,7 @@
 | Name   |                            Position |                                                            Role and Responsibility                                                            |
 |:-------|------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
 | Xiao   |   EPM (Engineering Product Manager) |       Set up and track the software requirement in each part, design the engineering specification requirement, boosting the delivery. |
-| Leonardo Marcão Florentino   |   Technical Lead | Manage the technical issues throughout the Software development life cycle, and lead the development of all program R&D engineers. Coordinate with internal teams to understand user requirements and provide technical solutions.  |
+| Leonardo Marcão Florentino   |   Technical Lead | Manage the technical issues throughout the Software development life cycle, and lead the development of all program R&D engineers. Coordinate with internal teams to understand project requirements and provide technical solutions.  |
 | Lealem | Front-End Engineer |   Design the frontend UI, along with the application frontend,including Html, JS, and CSS scripts .  |
 |        | Back-End Engineer |   With a strong focus on a backend side (Python, Flask), develop the backend system for our application, cooperate with other R&D engineers to help our system get launched.|
 |        | Back-End Engineer |   With a strong focus on a backend side (Python, Flask), develop the backend system for our application, cooperate with other R&D engineers to help our system get launched.|
