@@ -13,7 +13,7 @@
 | Nayana Halemani | Software Validation and UX Engineer |   Validate the user experience and raise up the using experience issues for our project.|
 
 
-Team Members (9) Waiting List:
+Team Members (8) Waiting List:
 Xiao, Lealem, William Vongphanith
-, Yanbo Fang, Subha, Nayana Halemani
+, Yanbo Fang, Nayana Halemani
 , Chenchao Lin, Leonardo Marcão Florentino, Eshaan Barkataki
