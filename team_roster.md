@@ -1,9 +1,9 @@
 | Name   |                            Position |                                                            Role and Responsibility                                                            |
 |:-------|------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------:|
 | Xiao   |   EPM (Engineering Product Manager) |       Set up and track the software requirement in each part, design the engineering specification requirement, boosting the delivery.        |
-| Lealem |                 Front End Developer |                                         Develop the frontend UI, along with the application frontend.                                         |
-|        |                  Back End Developer |              Develop the backend system for our application, cooperate with other R&D engineers to help our system get launched.              |
-|        |                  Back End Developer |              Develop the backend system for our application, cooperate with other R&D engineers to help our system get launched.              |
+| Lealem |                 Front End Engineer |                                         Develop the frontend UI, along with the application frontend.                                         |
+|        |                  Back End Engineer |              Develop the backend system for our application, cooperate with other R&D engineers to help our system get launched.              |
+|        |                  Back End Engineer |              Develop the backend system for our application, cooperate with other R&D engineers to help our system get launched.              |
 |        |                       Data Engineer |                                 Designing and implementing the highly reliable database for the application.                                  |
 |        |              Computational Linguist |   Prepare and organize the corpus we already contributed, release the scoring tactics algorithm and design the language assessment report.    |
 |        |              Computational Linguist |   Prepare and organize the corpus we already contributed, release the scoring tactics algorithm and design the language assessment report.    |
