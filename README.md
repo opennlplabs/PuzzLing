@@ -2,9 +2,9 @@
 [**Team R&R (Role and Responsibility)**](https://github.com/linguisticsjusticeleague/PuzzLing-and-Scoring/blob/main/team_roster.md)
 
 ## Mockup Preview
-This is an python supported web application using the Flask backend. Make sure you already have the Flask installed on your computer, and then simply run the app.py to render the server.
+This is an python supported web application using the Flask backend. Make sure you already have the Flask installed on your computer, and then simply run the app.py to render the server. Replacing `{AUTH_TOKEN}` with the authorization token from [NeuralSpace](https://www.neuralspace.ai/). 
 ``` Python
-python app.py
+python app.py --{AUTH_TOKEN}
 ```
 ### Folder Structure
 ```sh 
