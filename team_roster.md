@@ -4,7 +4,7 @@
 | Leonardo Marcão Florentino   |   Technical Lead | Manage the technical issues throughout the Software development life cycle, and lead the development of all program R&D engineers. Coordinate with internal teams to understand project requirements and provide technical solutions.  |
 | Lealem | Front-End Engineer |   Design the frontend UI, along with the application frontend,including Html, JS, and CSS scripts.  |
 | Chenchao Lin | Back-End Engineer |   With a strong focus on a backend side (Python, Flask), develop the backend system for our application, cooperate with other R&D engineers to help our system get launched.|
-| Back-End Engineer |   With a strong focus on a backend side (Python, Flask), develop the backend system for our application, cooperate with other R&D engineers to help our system get launched.|
+|                    | Back-End Engineer |   With a strong focus on a backend side (Python, Flask), develop the backend system for our application, cooperate with other R&D engineers to help our system get launched.|
 | Chenchao Lin       | Data Engineer and Scientist |    Designing and implementing the highly reliable database for the application, make integration of data storage solution.                                  |
 |        |              Computational Linguist |   Prepare and organize the corpus we already contributed, release the scoring tactics algorithm and design the language assessment report.    |
 |        |              Computational Linguist |   Prepare and organize the corpus we already contributed, release the scoring tactics algorithm and design the language assessment report.    |
