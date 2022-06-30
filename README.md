@@ -4,7 +4,7 @@
 ## Mockup Preview
 This is an python supported web application using the Flask backend. Running following install all the dependency packages
 ``` Python
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 Then simply run the app.py to render the server. Replacing `{AUTH_TOKEN}` with the authorization token from [NeuralSpace](https://www.neuralspace.ai/). 
 ``` Python
