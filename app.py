@@ -51,14 +51,14 @@ def Home():
         question = " "
         question = question.join(lines)
 
-    question = question.split(' ')
+    question = question.strip().split(' ')
     if question[0].isnumeric():
         question = ' '.join(question[1:])
     else:
         question = ' '.join(question)
 
-    if question.endswith('\n'):
-        question = question.replace('\n', '')
+    #if question.endswith('\n'):
+    #    question = question.replace('\n', '')
 
     session['question'] = question
     # render the question into the index web
