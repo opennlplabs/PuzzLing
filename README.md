@@ -2,7 +2,7 @@
 [**Team R&R (Role and Responsibility)**](https://github.com/linguisticsjusticeleague/PuzzLing-and-Scoring/blob/main/team_roster.md)
 
 ## Mockup Preview
-This is an python supported web application using the Flask backend. Running following install all the dependency packages
+This is an python supported web application using the Flask backend. Running following command to install all the dependency packages
 ``` Python
 pip install -r requirements.txt
 ```
