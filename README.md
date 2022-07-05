@@ -48,8 +48,6 @@ python app.py --auth_token {AUTH_TOKEN}
 │   └── score.html
 ├── tools
 │   └── get_data.py
-└── tree
-- [error opening dir]
 
 9 directories, 27 files
 
