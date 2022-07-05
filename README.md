@@ -13,27 +13,46 @@ python app.py --auth_token {AUTH_TOKEN}
 ### Folder Structure
 ```sh 
 .
-├── .idea
-├── Data        # the dir for storing the testing and validation corpus
-│   ├── arabic_text.txt      # the Arabic sentences in formats  
-│   ├── english_text.txt      # the English sentences in formats and in parallel with the arabic           
-│   ├── WikiQAArticlesCorpusAr-En.tsv      # the short phrases  
-│   ├── WikiQAQuestionsCorpusAr-En.tsv     # the long sentences
-├── static      # include all the styling files for the front-end
-│   ├── img
-│   │   ├── fonts
-│   │   └── styles
-│   ├── styles                      
-│   │   ├── style.css
-├── templates   # the web structure of the frontend
-│   │   ├── index.html
-│   │   ├── score.html
-├── README.md
-├── app.py      # the python Flask web deploying file
-├── get_data.py      # the corpus cleanning scripts  
-├── logic.svg
+├── app.py
+├── data
+│   ├── testing_set
+│   │   └── demo.txt
+│   └── validation_set
+│       ├── arabic_text
+│       ├── english_text
+│       ├── WikiQAArticlesCorpusAr-En.tsv
+│       └── WikiQAQuestionsCorpusAr-En.tsv
 ├── logic_graphviz.gv
-.
+├── logic.svg
+├── README.md
+├── requirements.txt
+├── static
+│   ├── img
+│   │   ├── get_score_page.png
+│   │   ├── LJL Official Logo Image.png
+│   │   ├── LJL Official Logo Text.png
+│   │   ├── neuralspace.png
+│   │   ├── project_preview.png
+│   │   ├── puzzLingLogo.png
+│   │   └── puzzling_UI.png
+│   ├── js
+│   │   ├── easytimer.min.js
+│   │   ├── package.json
+│   │   ├── puzzling.js
+│   │   └── timer.js
+│   └── styles
+│       └── style.css
+├── team_roster.md
+├── templates
+│   ├── index.html
+│   └── score.html
+├── tools
+│   └── get_data.py
+└── tree
+- [error opening dir]
+
+9 directories, 27 files
+
 ```
 
 
