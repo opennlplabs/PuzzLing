@@ -11,7 +11,7 @@ Then simply run the app.py to render the server. Replacing `{AUTH_TOKEN}` with t
 ``` Linux
 python app.py --auth_token {AUTH_TOKEN}
 ```
-
+It can take some time when you fistly launch the system.
 
 
 ### Main Window
