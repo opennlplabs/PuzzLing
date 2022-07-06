@@ -1,6 +1,6 @@
 # PuzzLing and Scoring System 
 [**Team R&R (Role and Responsibility)**](https://github.com/linguisticsjusticeleague/PuzzLing-and-Scoring/blob/main/team_roster.md)
-
+[**Project Kickup Meeting**](https://docs.google.com/presentation/d/1oaW61zrtt6_X36aQhXCOqaIjKw7r4mKg9RaJ4o5dcDw/edit?usp=sharing)
 ## Mockup Preview
 This is an python supported web application using the Flask backend. Running following command to install all the dependency packages
 ``` Linux
