@@ -1,0 +1,40 @@
+.
+├── app.py
+├── data
+│   ├── testing_set
+│   │   └── demo.txt
+│   └── validation_set
+│       ├── arabic_text
+│       ├── english_text
+│       ├── WikiQAArticlesCorpusAr-En.tsv
+│       └── WikiQAQuestionsCorpusAr-En.tsv
+├── logic_graphviz.gv
+├── logic.svg
+├── README.md
+├── requirements.txt
+├── static
+│   ├── img
+│   │   ├── get_score_page.png
+│   │   ├── LJL Official Logo Image.png
+│   │   ├── LJL Official Logo Text.png
+│   │   ├── neuralspace.png
+│   │   ├── project_preview.png
+│   │   ├── puzzLingLogo.png
+│   │   └── puzzling_UI.png
+│   ├── js
+│   │   ├── easytimer.min.js
+│   │   ├── package.json
+│   │   ├── puzzling.js
+│   │   └── timer.js
+│   └── styles
+│       └── style.css
+├── team_roster.md
+├── templates
+│   ├── index.html
+│   └── score.html
+├── tools
+│   └── get_data.py
+└── tree
+- [error opening dir]
+
+9 directories, 27 files

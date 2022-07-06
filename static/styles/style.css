@@ -280,3 +280,18 @@ button:hover {
     text-decoration: none;
     color: inherit;
 }
+
+
+/* nice bootstrap ready facebook share button http://justincron.com */
+
+.btn-facebook {
+	color: #fff;
+	background-color: #4C67A1;
+}
+.btn-facebook:hover {
+	color: #fff;
+	background-color: #405D9B;
+}
+.btn-facebook:focus {
+	color: #fff;
+}
