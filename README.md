@@ -11,6 +11,19 @@ Then simply run the app.py to render the server. Replacing `{AUTH_TOKEN}` with t
 ``` Linux
 python app.py --auth_token {AUTH_TOKEN}
 ```
+
+
+
+### Main Window
+<div align="center">
+  <img src="./static/img/puzzling_UI.png" width = "100%" height = "100%">
+</div>
+
+### Scoring Feedback Window
+<div align="center">
+  <img src="./static/img/get_score_page.png" width = "100%" height = "100%">
+</div>
+
 ### Folder Structure
 ```sh 
 .
@@ -53,19 +66,6 @@ python app.py --auth_token {AUTH_TOKEN}
 9 directories, 27 files
 
 ```
-
-
-### Main Window
-<div align="center">
-  <img src="./static/img/puzzling_UI.png" width = "100%" height = "100%">
-</div>
-
-### Scoring Feedback Window
-<div align="center">
-  <img src="./static/img/get_score_page.png" width = "100%" height = "100%">
-</div>
-
-
 ## What is PuzzLing?
 
 **PuzzLing** combines the full system for the CALL(Computer Assisted Language Learning) platform especially focusing on low-resource languages, which includes language scoring and feedback functions. With the support from the latest language processing toolkit of the Neural Space, we aim to give a  general evaluation and retrieve the error places that the testers can improve. 
