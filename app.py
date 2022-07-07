@@ -73,7 +73,7 @@ def predict():
     target = escape(target)#translate(escape(target))
     prediction_score = calc_score(sentence, target)
     # ouput the correlation function
-    return render_template("score.html", prediction_text = "{}".format(prediction_score))
+    return render_template("score.html", prediction_text = "{}".format(prediction_score), sentence= "{}".format(sentence), target = "{}".format(target))
 
 
 def calc_score(inputs, target):

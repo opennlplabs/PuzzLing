@@ -79,7 +79,6 @@
             </nav>
 
             <div class="textarea-right-wrapper">
-                <p class="textarea-label">Translate Me!</p>
                     <form action="{{ url_for('predict', question = question)}}" method="post">
                         <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!'" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
                         <div class="counter-container">
