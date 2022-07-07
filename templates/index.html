@@ -62,16 +62,15 @@
             <div class="select-language active-language"><a href="/ukrainian/" onclick="setValueInLocalStorage('locale', 'Ukrainian');">Ukrainian</a></div>
         </div>
 
-        <div class="time-values">00:00:00</div>
-        <div class="buttons-wrapper">
-            <div>
-                <button class="startButton">Start</button>
-                <button class="pauseButton" >Pause</button>
-                <button class="stopButton">Stop</button>
-                <button class="resetButton">Resume</button>
+
+
+        <div>
+             <p id = "output" class = "text-center"></p>
+             <div id = "controls" class = "text-center">
+                <button class="timer-btn" id = "startPause" onclick = "startPause()">START</button>
+                <button class="timer-btn" onclick = "reset()">RESET</button>
             </div>
         </div>
-
 
 
         <div class="textarea-wrapper">
@@ -82,6 +81,7 @@
             </nav>
 
             <div class="textarea-right-wrapper">
+                    <p></p>
                     <form action="{{ url_for('predict', question = question)}}" method="post">
                         <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!'" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
                         <div class="counter-container">

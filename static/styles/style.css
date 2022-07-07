@@ -75,12 +75,15 @@ button {
   border-radius: 6px;
   padding: 16px 32px;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 1px;
   margin: auto;
   position: relative;
   margin-top: -80px;
-  cursor: pointer;
+  cursor: pointer;font-family: 'Average Sans', sans-serif;
+  text-transform: capitalize;
+  outline: white solid 2px;
+  transition: outline-offset .1s ease-in-out;
 }
 button:focus,
 
@@ -120,10 +123,21 @@ button:hover {
     border-radius: .4rem;
     border: none;
     background-color: #91c856;
+    font-size: 20px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+}
+
+.timer-btn {
+    padding: .6rem 2rem;
+    border-radius: .4rem;
+    border: none;
+    background-color: #91c856;
     font-size: 13px;
     font-family: sans-serif;
     letter-spacing: 1px;
 }
+
 /************main  */
 footer {
     margin-top: 1.2rem;
@@ -209,13 +223,7 @@ nav {
     font-size: 1.2rem;
     font-weight: 700;
 }
-button {
-    font-family: 'Average Sans', sans-serif;
-    font-size: 1.2rem !important;
-    text-transform: capitalize;
-    outline: white solid 2px;
-    transition: outline-offset .1s ease-in-out;
-}
+
 button:hover {
     outline-offset: -.3rem;
 }
@@ -346,4 +354,5 @@ flex-direction: column;
 .counter-container p:first-child {
 margin-bottom: 0;
 }
+
 
