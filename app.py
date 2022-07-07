@@ -120,6 +120,12 @@ def translate(sentence, languageToken="zh-CN"):
     return translatedtext
 
 
+@flask_app.route("/files/")
+def render_the_files_page():
+    return render_template("files.html")
+
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--auth_token', help='authorization token to NeuralSpace', default = '')

@@ -61,40 +61,16 @@
             <div class="select-language active-language"><a href="/twi/" onclick="setValueInLocalStorage('locale', 'Twi');">Twi</a></div>
             <div class="select-language active-language"><a href="/ukrainian/" onclick="setValueInLocalStorage('locale', 'Ukrainian');">Ukrainian</a></div>
         </div>
+        <div style="text-align: center;">
+            <img src="../static/img/icon/file-pdf.svg" alt="printing" width="56" height="56" fill="currentColor">
+        </div>
+        <label class="form-label" for="customFile">Upload your .pdf Files!</label>
+        <input type="file" class="form-control" id="customFile" />
 
-        <div class="time-values">00:00:00</div>
+
         <div class="buttons-wrapper">
             <div>
-                <button class="startButton">Start</button>
-                <button class="pauseButton" >Pause</button>
-                <button class="stopButton">Stop</button>
-                <button class="resetButton">Resume</button>
-            </div>
-        </div>
-
-
-
-        <div class="textarea-wrapper">
-            <nav class="textarea-left-wrapper">
-                <span id="testing_question" class="navbar-text">
-                  {{ question }}
-                </span>
-            </nav>
-
-            <div class="textarea-right-wrapper">
-                    <form action="{{ url_for('predict', question = question)}}" method="post">
-                        <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!'" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
-                        <div class="counter-container">
-                            <div id="counter" class="counter" style="text-align: center;"></div>
-                        </div>
-
-                        <div id="submission" style="text-align: center;">
-                            <a href="./predict">
-                                <!-- href="../predict" -->
-                            <button type="submit" class="submit-btn">Get Your Score!</button>
-                            </a>
-                        </div>
-                    </form>
+                <button>Get Your PuzzLing Files</button>
             </div>
         </div>
     </main>
