@@ -1,3 +1,5 @@
+/* Indicates the timer. */
+
 var time = 0;
 var running = 0;
 
