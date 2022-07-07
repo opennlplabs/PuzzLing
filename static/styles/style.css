@@ -1,15 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lato&family=Libre+Baskerville&family=Merriweather:wght@700&family=Work+Sans&display=swap");
 
-@import url('http://fonts.cdnfonts.com/css/glacial-indifference-2');
-@import url('https://fonts.googleapis.com/css2?family=Average+Sans&display=swap');
 
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
 }
+
+
+
 body {
     padding: 1.8rem 1rem;
+    background: rgb(255 255 255);
+
 }
 /* *********layout */
 
@@ -61,6 +66,29 @@ ul > li + li {
     border: none;
     margin-bottom: .6rem;
 }
+
+
+button {
+  /* position: absolute; */
+  background: rgb(17 166 131);
+  color: rgb(255 255 255);
+  border-radius: 6px;
+  padding: 16px 32px;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: auto;
+  position: relative;
+  margin-top: -80px;
+  cursor: pointer;
+}
+button:focus,
+
+button:hover {
+  background: rgb(0, 161, 173);
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+}
+
 .textarea-wrapper {
     display: flex;
     flex-direction: column;
@@ -88,11 +116,11 @@ ul > li + li {
     background-color: white;
 }
 .submit-btn {
-    padding: .8rem 2rem;
+    padding: .6rem 2rem;
     border-radius: .4rem;
     border: none;
     background-color: #91c856;
-    font-size: 16px;
+    font-size: 13px;
     font-family: sans-serif;
     letter-spacing: 1px;
 }
@@ -193,9 +221,24 @@ button:hover {
 }
 .textarea {
     font-family: 'Average Sans', sans-serif;
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1.2rem;
+    width: 100%;
+    height: 316px;
+    padding: 18px;
+    position: relative;
+    resize: none;
+    box-shadow: 0 12px 48px 0px rgb(109 117 141 / 20%);
+    background: rgb(255 255 255);
+    border: 0.5px solid rgb(231 233 245);
+    border-radius: 16px;
+
 }
+
+textarea:focus {
+  border: 0.3px solid rgb(43, 45, 56, 0.3);
+  outline: none;
+}
+
 
 .textarea-label, .subheading {
     font-style: italic;
@@ -296,4 +339,11 @@ button:hover {
 	color: #fff;
 }
 
+.counter-container {
+flex-direction: column;
+}
+
+.counter-container p:first-child {
+margin-bottom: 0;
+}
 

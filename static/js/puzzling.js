@@ -12,10 +12,10 @@ function countChars(textarea) {
 }
 
 
+
  function display() {
     window.print();
  }
-
 
 
 
