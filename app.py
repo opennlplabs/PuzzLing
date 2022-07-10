@@ -53,8 +53,8 @@ def l2norm(x, dim=-1):
 def Home():
 	# read the testing corpus from the data/testing_set dir
 
-	selected_language = request.args.get('language', None)
-	file_name = language_path[selected_language]
+	language = request.args.get('language', None)
+	file_name = language_path[language]
 
 	with open(file_name, 'r', encoding = "utf-8") as file:
 		# randomly choose a sentence from the corpus set
@@ -74,7 +74,11 @@ def Home():
 
 	session['question'] = question
 	# render the question into the index web
-	return render_template("index.html", question="{}".format(question))
+	return render_template(
+		"index.html", 
+		question="{}".format(question),
+		language="{}".format(language)
+		)
 
 
 @flask_app.route("/predict", methods=['GET', 'POST'])
@@ -82,10 +86,17 @@ def predict():
 	# retrieve the answer input from the user text-ins
 	sentence = request.form.get('inputText')
 	target = request.args.get('question')#request.args.get('question')
+	language = request.args.get('language', None)
 	target = escape(target)#translate(escape(target))
 	prediction_score = calc_score(sentence, target)
 	# ouput the correlation function
-	return render_template("score.html", prediction_text = "{}".format(prediction_score), sentence= "{}".format(sentence), target = "{}".format(target))
+	return render_template(
+		"score.html", 
+		prediction_text = "{}".format(prediction_score), 
+		sentence= "{}".format(sentence), 
+		target = "{}".format(target),
+		language = "{}".format(language)
+		)
 
 
 def calc_score(inputs, target):
