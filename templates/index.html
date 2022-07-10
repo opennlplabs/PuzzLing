@@ -4,7 +4,7 @@
 {% block content %}
     <main>
         <div id="language-switch">
-            <div class="select-language"><a href="{{url_for('Home', language = 'Somali')}}" onclick="setValueInLocalStorage('locale', 'Somali');">Somali</a></div>
+            <div class="select-language"><a href="{{url_for('Home', language='Somali')}}" onclick="setValueInLocalStorage('locale', 'Somali');">Somali</a></div>
             <div class="select-language active-language"><a href="{{url_for('Home', language='Xhosa')}}"  onclick="setValueInLocalStorage('locale', 'Xhosa');">Xhosa</a></div>
             <div class="select-language active-language"><a href="{{url_for('Home', language='Pashto')}}"  onclick="setValueInLocalStorage('locale', 'Pashto');">Pashto</a></div>
             <div class="select-language active-language"><a href="{{url_for('Home', language='Twi')}}"  onclick="setValueInLocalStorage('locale', 'Twi');">Twi</a></div>
@@ -30,7 +30,7 @@
 
             <div class="textarea-right-wrapper">
                     <p></p>
-                    <form action="{{ url_for('predict', question = question)}}" method="post">
+                    <form action="{{ url_for('predict', language=language, question=question)}}" method="post">
                         <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
                         <div class="counter-container">
                             <div id="counter" class="counter" style="text-align: center;"></div>

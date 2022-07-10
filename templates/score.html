@@ -5,6 +5,7 @@
     <main>
         <div class="report" style="text-align: center;">
             <p>--------------------------------This is Your Score Report--------------------------------</p>
+            <p>Source language: {{ language }} </p>
             <p>This is your answer: {{ sentence }} </p>
             <p>Here is the reference answer: {{ target }} </p>
             <p>The Accumulated Score: {{ prediction_text }} </p>
@@ -21,7 +22,7 @@
 
 
         <div id="submission" style="text-align: center;">
-            <a href="./">
+            <a href="{{url_for('Home', language=language)}}">
                 <!-- href="../predict" -->
             <button  type="submit" class="submit-btn">Go Back!</button>
             </a>
