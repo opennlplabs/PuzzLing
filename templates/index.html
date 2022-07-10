@@ -4,11 +4,11 @@
 {% block content %}
     <main>
         <div id="language-switch">
-            <div class="select-language"><a href="/somali/" onclick="setValueInLocalStorage('locale', 'Somali');">Somali</a></div>
-            <div class="select-language active-language"><a href="/xhosa/" onclick="setValueInLocalStorage('locale', 'Xhosa');">Xhosa</a></div>
-            <div class="select-language active-language"><a href="/pashto/" onclick="setValueInLocalStorage('locale', 'Pashto');">Pashto</a></div>
-            <div class="select-language active-language"><a href="/twi/" onclick="setValueInLocalStorage('locale', 'Twi');">Twi</a></div>
-            <div class="select-language active-language"><a href="/ukrainian/" onclick="setValueInLocalStorage('locale', 'Ukrainian');">Ukrainian</a></div>
+            <div class="select-language"><a href="{{url_for('Home', language = 'Somali')}}" onclick="setValueInLocalStorage('locale', 'Somali');">Somali</a></div>
+            <div class="select-language active-language"><a href="{{url_for('Home', language='Xhosa')}}"  onclick="setValueInLocalStorage('locale', 'Xhosa');">Xhosa</a></div>
+            <div class="select-language active-language"><a href="{{url_for('Home', language='Pashto')}}"  onclick="setValueInLocalStorage('locale', 'Pashto');">Pashto</a></div>
+            <div class="select-language active-language"><a href="{{url_for('Home', language='Twi')}}"  onclick="setValueInLocalStorage('locale', 'Twi');">Twi</a></div>
+            <div class="select-language active-language"><a href="{{url_for('Home', language='Ukrainian')}}"  onclick="setValueInLocalStorage('locale', 'Ukrainian');">Ukrainian</a></div>
         </div>
 
 
