@@ -23,11 +23,11 @@ import torch
 from transformers import AutoModel, AutoTokenizer
 
 language_path = {
-					'Somali':       "./data/testing_set/demo.txt",
-					'Xhosa':        "./data/testing_set/demo.txt",
-					'Pashto':       "./data/testing_set/demo.txt",
-					'Twi':          "./data/testing_set/demo.txt",
-					'Ukrainian':    "./data/testing_set/demo.txt", 
+					'Somali':		"./data/testing_set/demo.txt",
+					'Xhosa':		"./data/testing_set/demo.txt",
+					'Pashto':		"./data/testing_set/demo.txt",
+					'Twi':			"./data/testing_set/demo.txt",
+					'Ukrainian':	"./data/testing_set/demo.txt", 
 					None:			"./data/testing_set/demo.txt"
 				}
 
@@ -54,7 +54,6 @@ def Home():
 	# read the testing corpus from the data/testing_set dir
 
 	selected_language = request.args.get('language', None)
-	print(selected_language)
 	file_name = language_path[selected_language]
 
 	with open(file_name, 'r', encoding = "utf-8") as file:
