@@ -104,7 +104,7 @@ Our system working flows from defining our problem to the conclusion and future 
 
 
 <div align="center">
-  <img src="logic.svg" width = "100%" height = "100%">
+  <img src="static/logic.svg" width = "100%" height = "100%">
 </div>
 
 After the tester's testing data input into our scoring platform we build, and get the original text data passed through the Neural Space translation API pipeline, we can get the transcripted English result. We calculate the similarities score between those two results. 

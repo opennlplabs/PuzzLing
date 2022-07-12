@@ -1,11 +1,8 @@
 import torch
 from transformers import AutoModel, AutoTokenizer
 
-
 tokenizer = AutoTokenizer.from_pretrained("princeton-nlp/sup-simcse-bert-base-uncased")
 model = AutoModel.from_pretrained("princeton-nlp/sup-simcse-bert-base-uncased")
-
-
 
 def l2norm(x, dim=-1):
 	return x / x.norm(2, dim=dim, keepdim=True).clamp(min=1e-6)
