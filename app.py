@@ -20,7 +20,7 @@ import argparse
 import random
 from calc_score import calc_score
 from get_translation import translate
-
+from pre_question import pre_question
 
 language_path = {
 					'Somali':		"./data/testing_set/demo.txt",
@@ -53,15 +53,9 @@ def Home():
 		# convert the list output into string
 		question = " "
 		question = question.join(lines)
+		# do the pre_precessing of the question and return
+		question = pre_question(question)
 
-	question = question.strip().split(' ')
-	if question[0].isnumeric():
-		question = ' '.join(question[1:])
-	else:
-		question = ' '.join(question)
-
-	#if question.endswith('\n'):
-	#    question = question.replace('\n', '')
 
 	session['question'] = question
 	# render the question into the index web

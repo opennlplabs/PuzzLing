@@ -355,4 +355,11 @@ flex-direction: column;
 margin-bottom: 0;
 }
 
+.container{
+    font-family: 'Quicksand', sans-serif;
+    width: 100%;
+    aspect-ratio: 100 / 29;
+    box-shadow: 0 12px 48px 0px rgb(109 117 141 / 20%);
+
+}
 
