@@ -27,13 +27,11 @@ language_path = {
 					'Xhosa':		"./data/testing_set/demo.txt",
 					'Pashto':		"./data/testing_set/demo.txt",
 					'Twi':			"./data/testing_set/demo.txt",
-					'Ukrainian':	"./data/testing_set/demo.txt", 
-					None:			"./data/testing_set/demo.txt"
+					'Ukrainian':	"./data/testing_set/demo.txt"
 				}
 
 
 url = 'https://platform.neuralspace.ai/api/translation/v1/annotated/translate'
-#auth_token =
 headers = {}
 
 flask_app = Flask(__name__)
@@ -44,7 +42,7 @@ flask_app.secret_key = 'any random string'
 @flask_app.route("/", methods=['GET', 'POST'])
 def Home():
 	# read the testing corpus from the data/testing_set dir
-	language = request.args.get('language', None)
+	language = request.args.get('language', 'Somali')
 	file_name = language_path[language]
 
 	with open(file_name, 'r', encoding = "utf-8") as file:
@@ -53,11 +51,11 @@ def Home():
 		# convert the list output into string
 		question = " "
 		question = question.join(lines)
-		# do the pre_precessing of the question and return
+		# do the pre_processing of the question and return
 		question = pre_question(question)
 
 
-	session['question'] = question
+	#session['question'] = question
 	# render the question into the index web
 	return render_template(
 		"index.html", 
@@ -72,7 +70,7 @@ def predict():
 	sentence = request.form.get('inputText')
 	target = request.args.get('question')#request.args.get('question')
 	language = request.args.get('language', None)
-	target = escape(target)#translate(escape(target))
+	target = escape(target)#translate(escape(target),headers)
 	prediction_score = calc_score(sentence, target)
 	# ouput the correlation function
 	return render_template(

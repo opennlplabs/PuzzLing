@@ -6,7 +6,7 @@ def pre_question(question):
     else:
         question = ' '.join(question)
 
+    return question
+
 # if question.endswith('\n'):
 #    question = question.replace('\n', '')
-
-

@@ -1,4 +1,4 @@
-def translate(sentence, languageToken="zh-CN"):
+def translate(sentence, headers, languageToken="zh-CN"):
 	"""Get the translations response from the Neural Space API"""
 	passedValue = sentence.encode('utf-8').decode('latin1')
 	data = f"""
