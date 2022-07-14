@@ -25,7 +25,7 @@ from pre_question import pre_question
 language_path = {
 					'Somali':		"./data/testing_set/demo.txt",
 					'Xhosa':		"./data/testing_set/demo.txt",
-					'Pashto':		"./data/testing_set/demo.txt",
+					'Pashto':		"./data/testing_set/pashto/pashto_only.txt",
 					'Twi':			"./data/testing_set/demo.txt",
 					'Ukrainian':	"./data/testing_set/demo.txt"
 				}
