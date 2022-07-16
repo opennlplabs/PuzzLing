@@ -25,7 +25,7 @@ from pre_question import pre_question
 language_path = {
 					'Somali':		"./data/testing_set/demo.txt",
 					'Xhosa':		"./data/testing_set/demo.txt",
-					'Pashto':		"./data/testing_set/pashto/pashto_only.txt",
+					'Pashto':		"./data/testing_set/pashto/pashto.txt",
 					'Twi':			"./data/testing_set/demo.txt",
 					'Ukrainian':	"./data/testing_set/demo.txt"
 				}
@@ -49,10 +49,10 @@ def Home():
 		# randomly choose a sentence from the corpus set
 		lines = random.sample(file.readlines(), 1)
 		# convert the list output into string
-		question = " "
-		question = question.join(lines)
+		lines = " ".join(lines)
+		question = lines
 		# do the pre_processing of the question and return
-		question = pre_question(question)
+		# question = pre_question(lines)
 
 
 	#session['question'] = question
