@@ -12,7 +12,8 @@
 
 
 body {
-    padding: 1.8rem 1rem;
+    min-height: 100vh;
+    padding: 1.8rem 1rem 0rem;
     background: rgb(255 255 255);
 
 }
@@ -82,14 +83,18 @@ button {
   margin-top: -80px;
   cursor: pointer;font-family: 'Average Sans', sans-serif;
   text-transform: capitalize;
-  outline: white solid 2px;
-  transition: outline-offset .1s ease-in-out;
+  outline: none;
+  transition: all .1s ease-in-out;
 }
-button:focus,
-
 button:hover {
   background: rgb(0, 161, 173);
-  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:0px 8px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+button:focus {
+    background: rgb(0, 161, 173);
+    outline: white solid 2px !important;
+    outline-offset: -.3rem;
 }
 
 .textarea-wrapper {
@@ -123,6 +128,7 @@ button:hover {
     border-radius: .4rem;
     border: none;
     background-color: #91c856;
+    margin-top: 15px;
     font-size: 20px;
     font-family: sans-serif;
     letter-spacing: 1px;
@@ -222,10 +228,6 @@ nav {
 .time-values {
     font-size: 1.2rem;
     font-weight: 700;
-}
-
-button:hover {
-    outline-offset: -.3rem;
 }
 .textarea {
     font-family: 'Average Sans', sans-serif;
@@ -356,6 +358,7 @@ margin-bottom: 0;
 }
 
 .container{
+    padding: 20px;
     font-family: 'Quicksand', sans-serif;
     width: 100%;
     aspect-ratio: 100 / 29;
@@ -363,3 +366,38 @@ margin-bottom: 0;
 
 }
 
+/* style for cookies alert */
+.cookiealert {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0 !important;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 0;
+    transform: translateY(100%);
+    transition: all 500ms ease-out;
+    color: #ecf0f1;
+    background: #212327;
+    text-align: center !important;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid transparent;
+}
+
+.cookiealert.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+    transition-delay: 1000ms;
+}
+
+.cookiealert a {
+    text-decoration: underline
+}
+
+.cookiealert .acceptcookies {
+    margin-left: 10px;
+    vertical-align: baseline;
+}
