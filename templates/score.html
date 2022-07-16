@@ -3,9 +3,52 @@
 
 {% block content %}
     <main>
-        <body>
+        <div>
             <div class="container">
+
+                <body onload="myFunction()">
+                  <script>
+                    function myFunction() {
+                      let count = Number(localStorage.getItem('count')) || 1;
+                      if (count >= 5) {
+                          alert("You already finished all the 5 questions!")
+                          window.localStorage.clear();
+                      }
+                      else {
+                          localStorage.setItem('count', count + 1);
+                          document.getElementById("count").innerHTML = count;
+                      }
+                    }
+                  </script>
+                </body>
+
+
                 <div class="report" style="text-align: center;">
+                    <div>
+                        <div class="progress">
+                          <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <script>
+                            let count = Number(localStorage.getItem('count')) || 1;
+                            var i = 0;
+                            var bar = document.querySelector(".progress-bar");
+
+                            function makeProgress(){
+                                var limit = count * 20;
+                                if(i < limit){
+                                    i = i + 1;
+                                    bar.style.width = i + "%";
+                                    bar.innerText = i + "%";
+                                }
+                                // Wait for sometime before running this script again
+                                setTimeout("makeProgress()", 100);
+                            }
+                            makeProgress();
+                        </script>
+                    </div>
+                    <p>This is your <span id="count"></span>th question.</p>
+                    <span id="count"></span>
+
                     <p>--------------------------------This is Your Score Report--------------------------------</p>
                     <p>Source language: {{ language }} </p>
                     <p>This is your answer: {{ sentence }} </p>
@@ -26,11 +69,15 @@
                 <div id="submission" style="text-align: center;">
                     <a href="{{url_for('Home', language=language)}}">
                         <!-- href="../predict" -->
-                    <button  type="submit" class="submit-btn">Go Back!</button>
+                    <button  type="submit" class="submit-btn">Continue</button>
                     </a>
+                    <button  type="submit" class="submit-btn">Finish</button>
                 </div>
+
+
+
             </div>
-        </body>
+        </div>
     </main>
 {% endblock %}
 
