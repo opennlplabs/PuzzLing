@@ -13,7 +13,6 @@
 
 
 
-
         <div>
              <p id = "output" class = "text-center"></p>
              <div id = "controls" class = "text-center">
@@ -32,7 +31,7 @@
 
             <div class="textarea-right-wrapper">
                     <p></p>
-                    <form action="{{ url_for('predict', language=language, question=question)}}" method="post">
+                    <form action="{{ url_for('predict', language=language, question=question, index=index)}}" method="post">
                         <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
                         <div class="counter-container">
                             <div id="counter" class="counter" style="text-align: center;"></div>
