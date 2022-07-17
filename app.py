@@ -47,20 +47,26 @@ def Home():
 
 	with open(file_name, 'r', encoding = "utf-8") as file:
 		# randomly choose a sentence from the corpus set
-		lines = random.sample(file.readlines(), 1)
+		saved_file = file.readlines()
+		index = request.args.get('index', random.randint(0,len(saved_file)-1))
+		index = int(index)
+		lines = saved_file[index]
+
+		#lines = random.sample(file.readlines(), 1)
 		# convert the list output into string
-		lines = " ".join(lines)
+		#lines = " ".join(lines)
+
 		question = lines
 		# do the pre_processing of the question and return
 		# question = pre_question(lines)
-
 
 	#session['question'] = question
 	# render the question into the index web
 	return render_template(
 		"index.html", 
-		question="{}".format(question),
-		language="{}".format(language)
+		question = "{}".format(question),
+		language = "{}".format(language),
+		index = "{}".format(str(index))
 		)
 
 
@@ -70,21 +76,25 @@ def predict():
 	sentence = request.form.get('inputText')
 	target = request.args.get('question')#request.args.get('question')
 	language = request.args.get('language', None)
+	index = request.args.get('index', -1)
+	index = int(index)
+
+
 	target = escape(target)#translate(escape(target),headers)
 	prediction_score = calc_score(sentence, target)
 	# ouput the correlation function
 	return render_template(
 		"score.html", 
 		prediction_text = "{}".format(prediction_score), 
-		sentence= "{}".format(sentence), 
+		sentence = "{}".format(sentence), 
 		target = "{}".format(target),
-		language = "{}".format(language)
+		language = "{}".format(language),
+		index = "{}".format(str(index))
 		)
 
 @flask_app.route("/files/")
 def render_the_files_page():
 	return render_template("files.html")
-
 
 
 if __name__ == "__main__":
