@@ -77,6 +77,10 @@ def predict():
 	target = request.args.get('question')#request.args.get('question')
 	language = request.args.get('language', None)
 	index = request.args.get('index', -1)
+
+	if index <= 0:
+		raise ValueError('Index should be larger than 0')
+		
 	index = int(index)
 
 
