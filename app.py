@@ -25,7 +25,7 @@ from pre_question import pre_question
 language_path = {
 					'Somali':		"./data/testing_set/demo.txt",
 					'Xhosa':		"./data/testing_set/demo.txt",
-					'Pashto':		"./data/testing_set/pashto/pashto_backup.txt",
+					'Pashto':		"./data/testing_set/pashto/pashto.txt",
 					'Twi':			"./data/testing_set/demo.txt",
 					'Ukrainian':	"./data/testing_set/demo.txt"
 				}
@@ -56,7 +56,7 @@ def Home():
 		# convert the list output into string
 		#lines = " ".join(lines)
 		# return the question on the frontend
-		question = lines.split("$")[1]
+		question = lines
 		# do the pre_processing of the question and return
 		# question = pre_question(lines)
 
