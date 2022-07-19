@@ -1,8 +1,5 @@
 1 I like my school.$ زه خپل ښوونځی خوښوم
 3 I love my parents.$ زه له مور او پلار سره مینه لرم.
-5 May I come in?$ کولای شم دننه راشم؟
-7 What is your name?$ ستا نوم څه دی؟
-9 How are you   ته څنګه یاست؟
 11 I like to eat ice cream.$ زه د آیس کریم خوړل خوښوم.
 13 My favorite color is green.$ زما د خوښې رنګ شنه دی.,
 15 Take the trash out.$ کثافات وباسئ.
