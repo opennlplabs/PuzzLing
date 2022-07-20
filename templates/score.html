@@ -7,17 +7,17 @@
             <div class="container">
 
                 <body onload="myFunction()">
+                
                   <script>
                     function myFunction() {
                       let count = Number(localStorage.getItem('count')) || 1;
                       if (count >= 5) {
-                          alert("You already finished all the 5 questions!")
-                          window.localStorage.clear();
+                        alert("You already finished all the 5 questions!");
                       }
-                      else {
-                          localStorage.setItem('count', count + 1);
-                          document.getElementById("count").innerHTML = count;
-                      }
+                      
+                      localStorage.setItem('count', count + 1);
+                      document.getElementById("count").innerHTML = count;
+                      
                     }
                   </script>
                 </body>
@@ -30,7 +30,7 @@
                         </div>
                         <script>
                             let count = Number(localStorage.getItem('count')) || 1;
-                            var i = 0;
+                            var i = (count - 1) * 20;
                             var bar = document.querySelector(".progress-bar");
 
                             function makeProgress(){
@@ -41,7 +41,7 @@
                                     bar.innerText = i + "%";
                                 }
                                 // Wait for sometime before running this script again
-                                setTimeout("makeProgress()", 100);
+                                setTimeout("makeProgress()", 50);
                             }
                             makeProgress();
                         </script>
@@ -69,13 +69,27 @@
                 <div id="submission" style="text-align: center;">
                     <a href="{{url_for('Home', language=language, index=index)}}">
                         <!-- href="../predict" -->
-                    <button  type="submit" class="submit-btn">Back</button>
+                        <script>
+                            function countDecrease() {
+                                let count = Number(localStorage.getItem('count'));
+                                localStorage.setItem('count', count - 1);
+                            }
+                        </script>
+                        <button onclick="countDecrease()" type="submit" class="submit-btn">Back</button>
                     </a>
                     <a href="{{url_for('Home', language=language)}}">
                         <!-- href="../predict" -->
-                    <button  type="submit" class="submit-btn">Continue</button>
+                        <button  type="submit" class="submit-btn">Continue</button>
                     </a>
-                    <button  type="submit" class="submit-btn">Finish</button>
+                    <a href="{{url_for('Home', language=language)}}">
+                        <script>
+                            function countReset() {
+                                localStorage.setItem('count', null);
+                            }
+                            
+                        </script>
+                        <button onclick="countReset()" type="submit" class="submit-btn">Finish</button>
+                    </a>
                 </div>
 
 
