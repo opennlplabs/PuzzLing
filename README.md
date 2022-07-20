@@ -1,5 +1,8 @@
 # PuzzLing Dashboard
 
+<div align="center">
+  <img src="./dashboard.png" width = "100%" height = "100%">
+</div>
 
 # [Soft UI Dashboard](https://appseed.us/generator/soft-ui-dashboard/) Flask
 
