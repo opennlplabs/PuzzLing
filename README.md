@@ -5,6 +5,8 @@
 
 [**Jira Workspace**](https://linguisticsjusticeleague.atlassian.net/jira/core/projects/PUZ/board)
 
+[**Final Product for Deployment**](https://github.com/linguisticsjusticeleague/PuzzLing-and-Scoring/tree/dashboard)
+
 ## Mockup Preview
 This is an python supported web application using the Flask backend. Running following command to install all the dependency packages
 ``` Linux
@@ -15,6 +17,7 @@ Then simply run the app.py to render the server. Replacing `{AUTH_TOKEN}` with t
 python app.py --auth_token {AUTH_TOKEN}
 ```
 It can take some time when you fistly launch the system.
+
 
 
 ### Main Window
