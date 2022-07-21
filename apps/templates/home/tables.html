@@ -7,31 +7,29 @@
 
 {% block content %}
 
+    <h3 id="testing_question">
+      "ته څنګه یاست؟"
+      {{ question }}
+    </h3>
+
+
+
+
+
     <div class="container-fluid py-4">
-
-
-
-
-
-
       <div class="row">
-            <nav class="textarea-left-wrapper">
-                <p>This is the Test!</p>
-                <span id="testing_question" class="navbar-text">
-                  {{ question }}
-                </span>
-            </nav>
+            <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
+      </div>
 
-            <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>      </div
+
+    <p>Get Your Score!</p>
+    <a class="btn btn-outline-primary btn-sm mb-0 me-3"
+       target="_blank"
+       href="./">Submit
+    </a>
 
 
           {% include "includes/footer.html" %}
-            <a class="btn btn-outline-primary btn-sm mb-0 me-3"
-                   target="_blank"
-                   href="./">Submit
-            </a>
-      </div>
-
 
 
     </div>
