@@ -10,7 +10,7 @@ This is an python supported web application using the Flask backend. Running fol
 ``` Linux
 pip install -r requirements.txt
 ```
-Then simply run the app.py to render the server. Replacing `{AUTH_TOKEN}` with the authorization token from [NeuralSpace](https://www.neuralspace.ai/). 
+Then simply run the app.py to render the server. Replacing `{AUTH_TOKEN}` with the authorization token from [NeuralSpace](https://www.neuralspace.ai/). Currently for the functional demo usage, you can igonore the  `{AUTH_TOKEN}`. 
 ``` Linux
 python app.py --auth_token {AUTH_TOKEN}
 ```
