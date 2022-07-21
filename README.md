@@ -114,9 +114,32 @@ After the tester's testing data input into our scoring platform we build, and ge
 
 By comparing the difference between those two data and applied those weighting tactics, we can directly know how the tester's English language level.
 
+## Evaluation Results
 
+```
+------ test ------
++--------------------------------+--------+-------+--------+-----+-----------+
+|                                | Somali | Xhosa | Pashto | Twi | Ukrainian |
++--------------------------------+--------+-------+--------+-----+-----------+
+| unsup-simcse-bert-base-uncased |        |       |        |     |           |
++--------------------------------+--------+-------+--------+-----+-----------+
+| unsup-simcse-bert-large-uncased|        |       |        |     |           |
++--------------------------------+--------+-------+--------+-----+-----------+
+| unsup-simcse-roberta-base      |        |       |        |     |           |
++--------------------------------+--------+-------+--------+-----+-----------+
+| unsup-simcse-roberta-large     |        |       |        |     |           |
++--------------------------------+--------+-------+--------+-----+-----------+
+| sup-simcse-bert-base-uncased   |        |       |        |     |           |
++--------------------------------+--------+-------+--------+-----+-----------+
+| sup-simcse-bert-large-uncased  |        |       |        |     |           |
++--------------------------------+--------+-------+--------+-----+-----------+
+| sup-simcse-roberta-base        |        |       |        |     |           |
++--------------------------------+--------+-------+--------+-----+-----------+
+| sup-simcse-roberta-large       |        |       |        |     |           |
++--------------------------------+--------+-------+--------+-----+-----------+
+```
 
-
+Results will be added soon!
 
 
 
