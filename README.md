@@ -124,11 +124,11 @@ By comparing the difference between those two data and applied those weighting t
 +--------------------------------+--------+-------+--------+-----+-----------+
 |                                | Somali | Xhosa | Pashto | Twi | Ukrainian |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| unsup-simcse-bert-base-uncased |        |       |        |     |           |
+| unsup-simcse-bert-base-uncased |        |       |  99.60 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| unsup-simcse-bert-large-uncased|        |       |        |     |           |
+| unsup-simcse-bert-large-uncased|        |       | 100.00 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| unsup-simcse-roberta-base      |        |       |        |     |           |
+| unsup-simcse-roberta-base      |        |       |  99.24 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
 | unsup-simcse-roberta-large     |        |       |        |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
