@@ -33,7 +33,7 @@ It can take some time when you fistly launch the system.
 </div>
 
 ### PuzzLing File Window 
-(This is a feature that under discussion, ideas from  [**Edulang**](https://github.com/linguisticsjusticeleague/newStorybookImages )
+(This is a feature that is still under discussion, ideas and Pipeline codes are from  [**Edulang**](https://github.com/linguisticsjusticeleague/newStorybookImages )
 )
 <div align="center">
   <img src="./static/img/puzzling_file_UI.png" width = "100%" height = "100%">
