@@ -6,7 +6,9 @@ import requests
 import json
 
 import pandas as pd
+import evaluate
 
+pearmanr_metric = evaluate.load("spearmanr")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 language_path = {
@@ -64,19 +66,19 @@ def create_dataloader(language: str):
 			sent1, sent2 = line.split('$')
 			eng = pre_question(sent1)
 			low = pre_question(sent2)
-			dataset.append({'English': eng, 'LowLanguage': low})
+			dataset.append({'English': eng, 'LRL': low})
 	
 	#dataset = pd.DataFrame(dataset)
 	return DataLoader(dataset, batch_size=128, shuffle=False, num_workers=0)
 
 
-def get_result(dataloader: dataset, languageToken: str, headers: dict):
+def get_result(dataloader: [dict], languageToken: str, headers: dict):
 	source = torch.tensor([]).to(device)
 	target = torch.tensor([]).to(device)
 
 	for i,data in enumerate(dataloader):
 		englishtext = data['English']
-		translatedtext = [translate(sentence, headers, languageToken) for sentence in data['LowLanguage']]
+		translatedtext = [translate(sentence, headers, languageToken) for sentence in data['LRL']]
 
 		englishembed = sentence_mapping(englishtext)
 		translatedembed = sentence_mapping(translatedtext)
@@ -87,18 +89,22 @@ def get_result(dataloader: dataset, languageToken: str, headers: dict):
 
 	print("Source size: ", source.size())
 	print("Target size: ", target.size())
-	sim_matrix = similarity(source, target)
-	print(sim_matrix)
-	print("Matrix Size: ", sim_matrix.size())
-	res = torch.softmax(sim_matrix, -1).diag().mean()
+	#res = compoute_rank_correlation(source, target)
+	res = []
+	for i in range(source.size(0)):
+		res.append(pearmanr_metric.compute(references=source[i].numpy().tolist(), 
+		predictions=target[i].numpy().tolist())['spearmanr'])
+	
+	#print(res)
+	#print(sim_matrix)
+	#print("Matrix Size: ", sim_matrix.size())
+	#res = torch.softmax(sim_matrix, -1).diag().mean()
 
-	return res
+	return (sum(res) / len(res) + 1) / 2
 
 
 
-
-
-def translate(sentence: str, headers: dict, languageToken="zh-CN": str):
+def translate(sentence: str, headers: dict, languageToken="zh-CN"):
 	"""Get the translations response from the Neural Space API"""
 	passedValue = sentence.encode('utf-8').decode('latin1')
 	data = f"""
@@ -115,6 +121,30 @@ def translate(sentence: str, headers: dict, languageToken="zh-CN": str):
 	translatedtext = response_dict["data"]["translatedText"]
 
 	return translatedtext
+
+
+
+def compoute_rank_correlation(att: torch.tensor, grad_att: torch.tensor):
+	"""
+	Calculate Spearman's correlation coefficient between target
+	att: [m,n]
+	grad_att: [m,n]
+
+	return:
+	correlation: [torch.tensor]
+	"""
+	def _rank_correlation_(att_map, att_gd):
+		n = torch.tensor(att_map.size(1))
+		upper = 6 * torch.sum((att_gd - att_map).pow(2), dim=1)
+		down = n * (n.pow(2) - 1.0)
+		res = (1.0 - (upper / down))
+		return res
+
+	att = att.sort(dim=1)[1]
+	grad_att = grad_att.sort(dim=1)[1]
+	correlation = _rank_correlation_(att.float(), grad_att.float())
+
+	return correlation
 
 
 if __name__ == "__main__":
