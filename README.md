@@ -132,13 +132,13 @@ By comparing the difference between those two data and applied those weighting t
 +--------------------------------+--------+-------+--------+-----+-----------+
 | unsup-simcse-roberta-large     |        |       | 100.00 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| sup-simcse-bert-base-uncased   |        |       |        |     |           |
+| sup-simcse-bert-base-uncased   |        |       |  99.60 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| sup-simcse-bert-large-uncased  |        |       |        |     |           |
+| sup-simcse-bert-large-uncased  |        |       | 100.00 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| sup-simcse-roberta-base        |        |       |        |     |           |
+| sup-simcse-roberta-base        |        |       |  99.24 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| sup-simcse-roberta-large       |        |       |        |     |           |
+| sup-simcse-roberta-large       |        |       | 100.00 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
 ```
 
