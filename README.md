@@ -32,7 +32,9 @@ It can take some time when you fistly launch the system.
   <img src="./static/img/get_score_page.png" width = "100%" height = "100%">
 </div>
 
-### PuzzLing File Window
+### PuzzLing File Window 
+(This is a feature that under discussion, ideas from  [**Edulang**](https://github.com/linguisticsjusticeleague/newStorybookImages )
+)
 <div align="center">
   <img src="./static/img/puzzling_file_UI.png" width = "100%" height = "100%">
 </div>
