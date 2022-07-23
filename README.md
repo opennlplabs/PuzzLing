@@ -128,21 +128,21 @@ By comparing the difference between those two data and applied those weighting t
 +--------------------------------+--------+-------+--------+-----+-----------+
 |                                | Somali | Xhosa | Pashto | Twi | Ukrainian |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| unsup-simcse-bert-base-uncased |        |       |  99.60 |     |           |
+| unsup-simcse-bert-base-uncased |        |       |  95.74 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| unsup-simcse-bert-large-uncased|        |       | 100.00 |     |           |
+| unsup-simcse-bert-large-uncased|        |       |  96.17 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| unsup-simcse-roberta-base      |        |       |  99.24 |     |           |
+| unsup-simcse-roberta-base      |        |       |  95.53 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| unsup-simcse-roberta-large     |        |       | 100.00 |     |           |
+| unsup-simcse-roberta-large     |        |       |  95.61 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| sup-simcse-bert-base-uncased   |        |       |  99.60 |     |           |
+| sup-simcse-bert-base-uncased   |        |       |  95.61 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| sup-simcse-bert-large-uncased  |        |       | 100.00 |     |           |
+| sup-simcse-bert-large-uncased  |        |       |  96.92 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| sup-simcse-roberta-base        |        |       |  99.24 |     |           |
+| sup-simcse-roberta-base        |        |       |  96.23 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
-| sup-simcse-roberta-large       |        |       | 100.00 |     |           |
+| sup-simcse-roberta-large       |        |       |  96.33 |     |           |
 +--------------------------------+--------+-------+--------+-----+-----------+
 ```
 
