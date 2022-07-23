@@ -1,4 +1,4 @@
-# PuzzLing and Scoring Demo System 
+# PuzzLing and Scoring Demo System <a href="https://www.github.com/labuladong" target="_blank"><img src="https://img.shields.io/badge/Final Product-@labuladong-000000.svg?style=flat-square&logo=GitHub"></a>
 [**Team R&R (Role and Responsibility)**](https://github.com/linguisticsjusticeleague/PuzzLing-and-Scoring/blob/main/team_roster.md)
 
 [**Project Kickup Meeting Minutes**](https://docs.google.com/presentation/d/1oaW61zrtt6_X36aQhXCOqaIjKw7r4mKg9RaJ4o5dcDw/edit?usp=sharing)
