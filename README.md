@@ -1,4 +1,4 @@
-# PuzzLing Dashboard
+# PuzzLing Dashboard for Deployment
 
 <div align="center">
   <img src="./dashboard.png" width = "100%" height = "100%">
