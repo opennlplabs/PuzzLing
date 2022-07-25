@@ -7,13 +7,12 @@
 
 {% block content %}
 
-    <h3 id="testing_question">
-      ته څنګه یاست؟
-      {{ question }}
-    </h3>
-
-
-
+    <div class="text-center">
+        <h3 id="testing_question">
+          ته څنګه یاست؟
+          {{ question }}
+        </h3>
+    </div>
 
 
     <div class="container-fluid py-4">
@@ -21,17 +20,14 @@
             <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
       </div>
 
-
-    <p>Get Your Score!</p>
-    <a class="btn btn-outline-primary btn-sm mb-0 me-3"
-       target="_blank"
-       href="./">Submit
-    </a>
-
-
+    <div class="text-center">
+        <p>Get Your Score!</p>
+        <a class="btn btn-outline-primary btn-sm mb-0 me-3"
+           target="_self"
+           href="./score.html">Submit
+        </a>
+    </div>
           {% include "includes/footer.html" %}
-
-
     </div>
 
 {% endblock content %}

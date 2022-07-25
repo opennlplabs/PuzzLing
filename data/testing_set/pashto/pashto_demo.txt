@@ -1,0 +1,82 @@
+I like my school.
+"زه خپل ښوونځی خوښوم"
+I love my parents.
+"زه له مور او پلار سره مینه لرم."
+May I come in?
+"کولای شم دننه راشم؟"
+What is your name?
+"ستا نوم څه دی؟"
+How are you?
+"ته څنګه یاست؟"
+I like to eat ice cream.
+"زه د آیس کریم خوړل خوښوم."
+My favorite color is green.
+"زما د خوښې رنګ شنه دی.",
+Take the trash out.
+"کثافات وباسئ."
+They finished the race.
+"دوی سیالي پای ته ورسوله.",
+The dog climbed over the fence. 
+"سپی د کټ پر سر پورته شو.",
+The players celebrated their victory. 
+"لوبغاړو خپله بریا ولمانځله.",
+I will give you more cookies.
+"زه به تاسو ته نور کوکیز درکړم."
+The hens are in their coop. 
+"چرګان په خپل کوپۍ کې دي."
+She did not go to the park. 
+"هغه پارک ته نه وه تللې."
+They arrived early at the show.
+"دوی ننداره ته وختي راغلل.",
+They had great seats. 
+"دوی عالي څوکۍ درلودې.",
+I really like chocolate cake.
+"زه واقعیا د چاکلیټ کیک خوښوم."
+I am too full for dessert.
+"زه د شیدو لپاره ډیر ډک یم.",
+Mark finished his homework.
+"مارک خپل کورنی کار پای ته ورساوه." 
+We can go play outside. 
+"موږ کولی شو بهر لوبې وکړو.",
+He emptied the garbage. 
+"هغه کثافات خالي کړل.",
+She will take you to the mall.
+"هغه به تاسو مال ته بوځي.",
+You must shower. 
+"تاسو باید غسل وکړئ."
+He will try it your way.
+"هغه به ستاسو په لاره کې هڅه وکړي."
+They need to practice every day.
+"دوی باید هره ورځ تمرین وکړي.", 
+They need to swim every day.
+"دوی باید هره ورځ لامبو وهي.",
+He is shorter than his brother
+"هغه د خپل ورور څخه لنډ دی",
+This game is over.
+"دا لوبه پای ته ورسیده.",
+The movie will not start. 
+"فلم به پیل نه شي.",
+She plays basketball.
+"هغه باسکیټبال لوبوي.",
+They ask for hamburgers.
+"دوی د هامبرګر غوښتنه کوي.",
+They will play a game.
+"دوی به یوه لوبه وکړي.",
+We ate so much cake.
+"موږ ډیر کیک وخوړل."
+When we went to the store, my parents bought me some jeans.
+"کله چې موږ پلورنځي ته لاړو، زما مور او پلار ماته یو څه جینس راکړل.",
+For dinner, we are having steak and potatoes.
+"د ډوډۍ لپاره، موږ سټیک او کچالو لرو.",
+We opened the umbrella because it was raining.
+"موږ چترۍ پرانستله ځکه چې باران و.",
+The basement has three doors and two windows.
+"خونه درې دروازې او دوه کړکۍ لري.",
+In the garage, we built a small fort made of boxes.
+"په ګراج کې، موږ د بکسونو څخه جوړه شوې کوچنۍ کلا جوړه کړه.",
+I placed my homework in my backpack.
+"ما خپل کورنی کار زما په کڅوړه کې کېښود.",
+My jacket has two pockets.
+"زما جاکټ دوه جیبونه لري.",
+I turned in my papers as soon as class started.
+"کله چې ټولګی پیل شو ما خپل کاغذونه بدل کړل.",

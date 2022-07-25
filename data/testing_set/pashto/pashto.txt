@@ -1,0 +1,38 @@
+1 I like my school.$ زه خپل ښوونځی خوښوم
+3 I love my parents.$ زه له مور او پلار سره مینه لرم.
+11 I like to eat ice cream.$ زه د آیس کریم خوړل خوښوم.
+13 My favorite color is green.$ زما د خوښې رنګ شنه دی.,
+15 Take the trash out.$ کثافات وباسئ.
+17 They finished the race.$ دوی سیالي پای ته ورسوله.,
+19 The dog climbed over the fence. $ سپی د کټ پر سر پورته شو.,
+21 The players celebrated their victory. $ لوبغاړو خپله بریا ولمانځله.,
+23 I will give you more cookies.$ زه به تاسو ته نور کوکیز درکړم.
+25 The hens are in their coop. $ چرګان په خپل کوپۍ کې دي.
+27 She did not go to the park. $ هغه پارک ته نه وه تللې.
+29 They arrived early at the show.$ دوی ننداره ته وختي راغلل.,
+31 They had great seats. $ دوی عالي څوکۍ درلودې.,
+33 I really like chocolate cake.$ زه واقعیا د چاکلیټ کیک خوښوم.
+35 I am too full for dessert.$ زه د شیدو لپاره ډیر ډک یم.,
+37 Mark finished his homework.$ مارک خپل کورنی کار پای ته ورساوه.
+39 We can go play outside. $ موږ کولی شو بهر لوبې وکړو.,
+41 He emptied the garbage. $ هغه کثافات خالي کړل.,
+43 She will take you to the mall.$ هغه به تاسو مال ته بوځي.,
+45 You must shower. $ تاسو باید غسل وکړئ.
+47 He will try it your way.$ هغه به ستاسو په لاره کې هڅه وکړي.
+49 They need to practice every day.$ دوی باید هره ورځ تمرین وکړي.,
+51 They need to swim every day.$ دوی باید هره ورځ لامبو وهي.,
+53 He is shorter than his brother$ هغه د خپل ورور څخه لنډ دی,
+55 This game is over.$ دا لوبه پای ته ورسیده.,
+57 The movie will not start. $ فلم به پیل نه شي.,
+59 She plays basketball.$ هغه باسکیټبال لوبوي.,
+61 They ask for hamburgers.$ دوی د هامبرګر غوښتنه کوي.,
+63 They will play a game.$ دوی به یوه لوبه وکړي.,
+65 We ate so much cake.$ موږ ډیر کیک وخوړل.
+67 When we went to the store, my parents bought me some jeans.$ کله چې موږ پلورنځي ته لاړو، زما مور او پلار ماته یو څه جینس راکړل.,
+69 For dinner, we are having steak and potatoes.$ د ډوډۍ لپاره، موږ سټیک او کچالو لرو.,
+71 We opened the umbrella because it was raining.$ موږ چترۍ پرانستله ځکه چې باران و.,
+73 The basement has three doors and two windows.$ خونه درې دروازې او دوه کړکۍ لري.,
+75 In the garage, we built a small fort made of boxes.$ په ګراج کې، موږ د بکسونو څخه جوړه شوې کوچنۍ کلا جوړه کړه.,
+77 I placed my homework in my backpack.$ ما خپل کورنی کار زما په کڅوړه کې کېښود.,
+79 My jacket has two pockets.$ زما جاکټ دوه جیبونه لري.,
+81 I turned in my papers as soon as class started.$ کله چې ټولګی پیل شو ما خپل کاغذونه بدل کړل.,

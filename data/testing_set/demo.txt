@@ -1,0 +1,41 @@
+01 I like my school.
+02 I love my parents.
+03 May I come in?
+04 What is your name?
+05 How are you?
+06 I like to eat ice cream.
+07 My favorite color is green.
+08 Take the trash out.
+09 They finished the race.
+10 The dog climbed over the fence.
+11 The players celebrated their victory.
+12 I will give you more cookies.
+13 The hens are in their coop.
+14 She did not go to the park.
+15 They arrived early at the show.
+16 They had great seats.
+17 I really like chocolate cake.
+18 I am too full for dessert.
+19 Mark finished his homework.
+20 We can go play outside.
+21 He emptied the garbage.
+22 She will take you to the mall.
+23 You must shower.
+24 He will try it your way.
+25 They need to practice every day.
+26 They need to swim every day.
+27 He is shorter than his brother
+28 This game is over.
+29 The movie will not start.
+30 She plays basketball.
+31 They ask for hamburgers.
+32 They will play a game.
+33 We ate so much cake.
+34 When we went to the store, my parents bought me some jeans.
+35 For dinner, we are having steak and potatoes.
+36 We opened the umbrella because it was raining.
+37 The basement has three doors and two windows.
+38 In the garage, we built a small fort made of boxes.
+39 I placed my homework in my backpack.
+40 My jacket has two pockets.
+41 I turned in my papers as soon as class started.
