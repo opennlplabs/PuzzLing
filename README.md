@@ -1,4 +1,5 @@
 # PuzzLing Dashboard for Deployment
+Firstly just pip install all the packages and environments from the requirement.txt files.
 ``` Linux
 pip install -r requirements.txt
 ```
