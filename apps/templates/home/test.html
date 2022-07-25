@@ -9,16 +9,16 @@
 
     <div class="text-center">
         <h3 id="testing_question">
-          ته څنګه یاست؟
           {{ question }}
         </h3>
     </div>
 
-
     <div class="container-fluid py-4">
-      <div class="row">
-            <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
-      </div>
+            <div class="row">
+                <form method="post">
+                    <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
+                </form>
+            </div>
 
     <div class="text-center">
         <p>Get Your Score!</p>
