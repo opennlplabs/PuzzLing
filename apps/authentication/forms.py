@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 """
 Copyright (c) 2019 - present AppSeed.us
+Copyright (c) 2022 - Linguistics Justice League
 """
 
 from flask_wtf import FlaskForm
