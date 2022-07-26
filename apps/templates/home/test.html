@@ -19,6 +19,25 @@
                     <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
                 </form>
             </div>
+        <div class="counter-container">
+            <div id="counter" class="counter" style="text-align: center;"></div>
+        </div>
+
+        <script>
+            /* Indicates how many characters have been typed. */
+            function countChars(textarea) {
+                var text = textarea.value;
+                var len = text.length;
+                var counter = document.getElementById('counter');
+                if (len < 100) {
+                    counter.textContent = len + '/100';
+                } else {
+                    var locale = getCurrentLocale();
+                    counter.innerHTML = DICTIONARIES[locale]['Above maximum'] + ' <span style="color: red;">' + len + '</span>' + '/2000';
+                }
+            }
+
+        </script>
 
     <div class="text-center">
         <p>Get Your Score!</p>

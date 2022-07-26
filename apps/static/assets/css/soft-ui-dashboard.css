@@ -22776,3 +22776,16 @@ textarea:focus {
     font-size: 25px;
     margin-bottom: 1.5rem;
 }
+
+
+
+
+/* style for char counter alert */
+.counter-container {
+flex-direction: column;
+}
+
+.counter-container p:first-child {
+margin-bottom: 0;
+}
+
