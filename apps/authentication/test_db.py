@@ -1,17 +1,16 @@
 import sqlite3 as db
 
-db_path = "../db.sqlite3"
-exectCmd = "SELECT rowid, * FROM Users;"
 
+# exectCmd = "SELECT rowid, * FROM Users;"
 
 # print all the rows from the database
-def readFronSqllite(db_path, exectCmd):
+def readFromSqlite(exectCmd):
     """
-
     :param db_path:
     :param exectCmd:
     :return:
     """
+    db_path = "../db.sqlite3"
     conn = db.connect(db_path)
     cursor = conn.cursor()
     conn.row_factory = db.Row
