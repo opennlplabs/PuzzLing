@@ -41,10 +41,12 @@ def route_template(template):
 @blueprint.route("/test.html", methods=['GET', 'POST'])
 @login_required
 def test():
+
     # read the testing corpus from the data/testing_set dir
     language = request.args.get('language', 'Somali')
     file_name = "data/testing_set/pashto/pashto.txt"
     with open(file_name, 'r', encoding="utf-8") as file:
+
         # randomly choose a sentence from the corpus set
         saved_file = file.readlines()
         index = request.args.get('index', random.randint(0, len(saved_file) - 1))

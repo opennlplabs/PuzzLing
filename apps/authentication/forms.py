@@ -34,3 +34,5 @@ class CreateAccountForm(FlaskForm):
     language = StringField('language',
                            id='language_create',
                            validators=[DataRequired()])
+    score = StringField('score',
+                        id='score_create')

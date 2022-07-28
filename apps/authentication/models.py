@@ -19,6 +19,7 @@ class Users(db.Model, UserMixin):
     email = db.Column(db.String(64), unique=True)
     password = db.Column(db.LargeBinary)
     language = db.Column(db.String(64), unique=True)
+    score = db.Column(db.Integer, unique=True)
 
 
     def __init__(self, **kwargs):
@@ -37,6 +38,7 @@ class Users(db.Model, UserMixin):
 
     def __repr__(self):
         return str(self.username)
+
 
 
 @login_manager.user_loader
