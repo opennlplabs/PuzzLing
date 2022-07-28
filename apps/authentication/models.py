@@ -18,7 +18,7 @@ class Users(db.Model, UserMixin):
     username = db.Column(db.String(64), unique=True)
     email = db.Column(db.String(64), unique=True)
     password = db.Column(db.LargeBinary)
-    language = db.Column(db.String(64), unique=True)
+    language_id = db.Column(db.Integer)
     score = db.Column(db.Integer, unique=True)
 
 
