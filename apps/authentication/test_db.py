@@ -1,2 +1,14 @@
-import models
-Users = [models.User(username = "xiaoxiaoxiao")]
+import sqlite3 as db
+
+db_path = "../db.sqlite3"
+exectCmd = "SELECT rowid, * FROM Users;"
+
+
+# print all the rows from the database
+def readFronSqllite(db_path, exectCmd):
+    conn = db.connect(db_path)
+    cursor = conn.cursor()
+    conn.row_factory = db.Row
+    cursor.execute(exectCmd)
+    rows = cursor.fetchall()
+    return rows
