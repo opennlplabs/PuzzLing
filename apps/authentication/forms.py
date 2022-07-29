@@ -5,7 +5,7 @@ Copyright (c) 2022 - Linguistics Justice League
 """
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField
+from wtforms import StringField, PasswordField, SelectField
 from wtforms.validators import Email, DataRequired
 
 
@@ -31,8 +31,7 @@ class CreateAccountForm(FlaskForm):
     password = PasswordField('Password',
                              id='pwd_create',
                              validators=[DataRequired()])
-    language = StringField('language',
-                           id='language_create',
-                           validators=[DataRequired()])
+    language_id = SelectField(u'Language', choices=[(1, 'Swahili'), (2, 'Ukrainian'), (3, 'Pashto'),(4,'Hindi')])
+
     score = StringField('score',
                         id='score_create')
