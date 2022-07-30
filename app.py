@@ -30,6 +30,15 @@ language_path = {
 					'Ukrainian':	"./data/testing_set/demo.txt"
 				}
 
+language_codes_ns = {
+					'Somali':'so', 
+					'Xhosa':'xh', 
+					'Pashto':'ps', 
+					'Twi':'tw', 
+					'Ukrainian':'uk'
+					}
+
+
 
 url = 'https://platform.neuralspace.ai/api/translation/v1/annotated/translate'
 headers = {}
@@ -82,7 +91,10 @@ def predict():
 	if index <= 0:
 		raise ValueError('Index should be larger than 0')
 
-	target = escape(target)#translate(escape(target),headers)
+	if language == None:
+		raise ValueError('Invalid Language')
+
+	target = escape(target)#translate(escape(target),headers,languageToken=language_codes_ns[language])
 	prediction_score = calc_score(sentence, target)
 	# ouput the correlation function
 	return render_template(
