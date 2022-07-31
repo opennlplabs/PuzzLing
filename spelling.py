@@ -45,4 +45,5 @@ def spelling_score(source, target):
 
 	return 1 - mat[-1][-1] / max(s_len, t_len)
 
-print(spelling("machine orageg"))
+if __name__ == "__main__":
+	print(spelling("machine orageg"))
