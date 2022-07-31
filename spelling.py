@@ -15,7 +15,6 @@ def spelling(s):
 		score.append(spelling_score(i, res))
 		correct_words.append(res)
 
-	print(score)
 	return sum(score) / len(score)
 
 def spelling_score(source, target):
