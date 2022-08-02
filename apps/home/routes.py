@@ -15,6 +15,9 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from wtforms import TextAreaField
 from wtforms.widgets import TextArea
+from getSemanticScore import calc_score
+from getSpellingScore import spelling
+
 
 # Creat a form class for user input text
 class TextForm(FlaskForm):
@@ -43,13 +46,14 @@ def test():
     with open(file_name, 'r', encoding="utf-8") as file:
         # randomly choose a sentence from the corpus set
         saved_file = file.readlines()
-        index = request.args.get('index', random.randint(0, len(saved_file) - 1))
+        index: int | str = request.args.get('index', random.randint(0, len(saved_file) - 1))
         index = int(index)
         lines = saved_file[index]
         question = lines
 
     text = None
     form = TextForm()
+
     # Validate Form
     if form.validate_on_submit():
         # text is the user input answer
@@ -62,7 +66,10 @@ def test():
         language="{}".format(language),
         index="{}".format(str(index)),
         text=text,
-        form=form
+        form=form,
+        spelling=str(spelling(str(text))),
+        # TODO there has some bugs in here.
+        semantic="{:.2f}".format(calc_score(str(text), question))
     )
 
 
