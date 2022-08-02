@@ -149,7 +149,9 @@ By comparing the difference between those two data and applied those weighting t
 Results will be added soon!
 
 
+## Acknowledgement
 
+We want to thank [Princeton NLP group](https://princeton-nlp.github.io/) and [NeuralSpace](https://www.neuralspace.ai/) for making this project possible.
 
 
 
