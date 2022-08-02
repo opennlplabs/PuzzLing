@@ -9,6 +9,8 @@
 
 [**Final Product for Deployment**](https://github.com/linguisticsjusticeleague/PuzzLing-and-Scoring/tree/dashboard)
 
+[**Evaluation**](https://github.com/linguisticsjusticeleague/PuzzLing-and-Scoring/tree/main/eval)
+
 ## Mockup Preview
 This is an python supported web application using the Flask backend. Running following command to install all the dependency packages
 ``` Linux
