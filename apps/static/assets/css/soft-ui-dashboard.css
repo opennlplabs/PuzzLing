@@ -357,6 +357,16 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  resize: vertical;
+
+}
+
+#larger {
+font-size: 20px;
+}
+
+#middle {
+font-size: 15px;
 }
 
 button,
@@ -397,9 +407,7 @@ button:not(:disabled),
   border-style: none;
 }
 
-textarea {
-  resize: vertical;
-}
+
 
 fieldset {
   min-width: 0;

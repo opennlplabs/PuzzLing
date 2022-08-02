@@ -7,46 +7,84 @@
 
 {% block content %}
 
-    <div class="text-center">
-        <h3 id="testing_question">
-          {{ question }}
-        </h3>
-    </div>
+
 
 
     <div class="container-fluid py-4">
-            <div class="row">
-                 <form method="post">
-                    <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
+            {% if text %}
+
+              <div class="row">
+                  <p>--------------------------------This is Your Score Report--------------------------------</p>
+                    <p>This is your <span id="count"></span>th question.</p>
+                    <p> Here is the question: {{ question }} </p>
+                    <span id="count"></span>
+                    <p>This is your answer: {{ text }} </p>
+                    <p>Here is the reference answer: {{ question }} </p>
+                    <p>The Accumulated Score: {{ prediction_text }} </p>
+                    <p>Spelling Score: {{ prediction_text }} </p>
+                    <p>Grammar Score: {{ prediction_text }} </p>
+                    <p>Semantics Score: {{ prediction_text }} </p>
+                    <p>The Overall Score: {{ prediction_text }} </p>
+              </div>
+
+
+                <a class="btn btn-outline-primary btn-sm mb-0 me-3"
+                   target="_self"
+                   href="./test.html">Next One!
+                </a>
+            {% else %}
+                <form method="POST">
+                    <div class="text-center">
+                        <h3 id="testing_question">
+                          {{ question }}
+                        </h3>
+                    </div>
+
+                    {{ form.hidden_tag()}}
+
+                    {{ form.text.label(id='middle')  }}
+
+                    {{ form.text(rows="8", id='larger', class = "textarea") }}
+                    <br/>
+
+                    {{ form.submit(class = "btn btn-outline-primary btn-sm mb-0 me-3") }}
+
                 </form>
-            </div>
-        <div class="counter-container">
-            <div id="counter" class="counter" style="text-align: center;"></div>
-        </div>
-
-        <script>
-            /* Indicates how many characters have been typed. */
-            function countChars(textarea) {
-                var text = textarea.value;
-                var len = text.length;
-                var counter = document.getElementById('counter');
-                if (len < 100) {
-                    counter.textContent = len + '/100';
-                } else {
-                    var locale = getCurrentLocale();
-                    counter.innerHTML = DICTIONARIES[locale]['Above maximum'] + ' <span style="color: red;">' + len + '</span>' + '/2000';
-                }
-            }
+            {% endif %}
 
 
-        </script>
+<!--            <div class="row">-->
+<!--                 <form method="post">-->
+<!--                    <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        <div class="counter-container">-->
+<!--            <div id="counter" class="counter" style="text-align: center;"></div>-->
+<!--        </div>-->
 
-    <div class="text-center">
-        <p>Language Mode: {{ current_user.language }}</p>
-        <a class="btn btn-outline-primary btn-sm mb-0 me-3"
-           target="_self"
-           href="./score.html">Submit
-        </a>
+<!--        <script>-->
+<!--            /* Indicates how many characters have been typed. */-->
+<!--            function countChars(textarea) {-->
+<!--                var text = textarea.value;-->
+<!--                var len = text.length;-->
+<!--                var counter = document.getElementById('counter');-->
+<!--                if (len < 100) {-->
+<!--                    counter.textContent = len + '/100';-->
+<!--                } else {-->
+<!--                    var locale = getCurrentLocale();-->
+<!--                    counter.innerHTML = DICTIONARIES[locale]['Above maximum'] + ' <span style="color: red;">' + len + '</span>' + '/2000';-->
+<!--                }-->
+<!--            }-->
+
+
+<!--        </script>-->
+
+<!--    <div class="text-center">-->
+<!--        <p>Language Mode: {{ current_user.language }}</p>-->
+<!--        <a class="btn btn-outline-primary btn-sm mb-0 me-3"-->
+<!--           target="_self"-->
+<!--           href="./score.html">Submit-->
+<!--        </a>-->
 
     </div>
           {% include "includes/footer.html" %}

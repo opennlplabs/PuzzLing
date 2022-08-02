@@ -10,13 +10,21 @@ from flask_login import login_required
 from jinja2 import TemplateNotFound
 import random
 from flask import request
+from flask_wtf import FlaskForm
+from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
+from wtforms import TextAreaField
+from wtforms.widgets import TextArea
+
+# Creat a form class for user input text
+class TextForm(FlaskForm):
+    text = TextAreaField('Type Your Answer Here', widget=TextArea(), validators=[DataRequired()])
+    submit = SubmitField("Submit")
 
 
 @blueprint.route('/index.html', methods=['GET', 'POST'])
 @login_required
 def index():
-
-
     # TODO
     """
     :return: score_value
@@ -40,11 +48,21 @@ def test():
         lines = saved_file[index]
         question = lines
 
+    text = None
+    form = TextForm()
+    # Validate Form
+    if form.validate_on_submit():
+        # text is the user input answer
+        text = form.text.data
+        form.text.data = ""
+
     return render_template(
         "home/test.html",
         question="{}".format(question),
         language="{}".format(language),
         index="{}".format(str(index)),
+        text=text,
+        form=form
     )
 
 
@@ -79,11 +97,6 @@ def route_template(template):
 
     except:
         return render_template('home/page-500.html'), 500
-
-
-
-
-
 
 
 # Helper - Extract current page name from request
