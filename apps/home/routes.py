@@ -45,11 +45,14 @@ def test():
     file_name = "data/testing_set/pashto/pashto.txt"
     with open(file_name, 'r', encoding="utf-8") as file:
         # randomly choose a sentence from the corpus set
-        saved_file = file.readlines()
-        index: int | str = request.args.get('index', random.randint(0, len(saved_file) - 1))
-        index = int(index)
-        lines = saved_file[index]
-        question = lines
+        corpus_file = file.readlines()
+        idx: int | str = request.args.get('index', random.randint(0, len(corpus_file) - 1))
+        idx = int(idx)
+        lines = corpus_file[idx]
+        # this is the question set.
+        question = lines.split("$")[1]
+        # this is the reference answer part.
+        ref_answer = lines.split("$")[0]
 
     text = None
     form = TextForm()
@@ -67,9 +70,9 @@ def test():
         index="{}".format(str(index)),
         text=text,
         form=form,
-        spelling=str(spelling(str(text))),
+        spelling="{:.2f}".format(spelling(str(text))),
         # TODO there has some bugs in here.
-        semantic="{:.2f}".format(calc_score(str(text), question))
+        semantic="{:.2f}".format(calc_score(str(text), ref_answer))
     )
 
 
