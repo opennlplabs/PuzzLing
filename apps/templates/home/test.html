@@ -12,11 +12,12 @@
 
     <div class="container-fluid py-4">
             {% if text %}
-
               <div class="row">
                   <p>--------------------------------This is Your Score Report--------------------------------</p>
-                    <p>This is your <span id="count"></span>th question.</p>
+                  <p>This is your <span id="count"></span>th question.</p>
                     <span id="count"></span>
+                    <p>This is the question: {{ question }} </p>
+                    <p>This is the reference answer: {{ ref_answer }} </p>
                     <p>This is your answer: {{ text }} </p>
                     <p>The Accumulated Score: {{ prediction_text }} </p>
                     <p>Spelling Score: {{ spelling }} </p>
@@ -49,7 +50,6 @@
 
                 </form>
             {% endif %}
-
 
 <!--            <div class="row">-->
 <!--                 <form method="post">-->

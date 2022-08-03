@@ -65,14 +65,15 @@ def test():
 
     return render_template(
         "home/test.html",
-        question="{}".format(question),
+        question="{}".format(lines),
         language="{}".format(language),
         index="{}".format(str(index)),
         text=text,
         form=form,
         spelling="{:.2f}".format(spelling(str(text))),
         # TODO there has some bugs in here.
-        semantic="{:.2f}".format(calc_score(str(text), ref_answer))
+        semantic="{:.2f}".format(calc_score(str(text), question)),
+        ref_answer=ref_answer
     )
 
 
