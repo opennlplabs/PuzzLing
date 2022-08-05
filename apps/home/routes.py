@@ -67,7 +67,7 @@ def test():
         "home/test.html",
         question="{}".format(lines),
         language="{}".format(language),
-        index="{}".format(str(index)),
+        index="{}".format(str(idx)),
         text=text,
         form=form,
         spelling="{:.2f}".format(spelling(str(text))),
