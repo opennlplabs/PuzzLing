@@ -6,6 +6,7 @@ def convert(s):
 	return li
 
 def spelling(s):
+	s = s.lower()
 	words = convert(s)
 
 	correct_words = []
@@ -17,7 +18,7 @@ def spelling(s):
 
 	return sum(score) / len(score)
 
-def spelling_score(source, target):
+def spelling_score(source: str, target: str):
 	s_len = len(source)
 	t_len = len(target)
 

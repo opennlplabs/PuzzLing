@@ -18,9 +18,11 @@ import requests
 import json
 import argparse
 import random
+
 from calc_score import calc_score
 from get_translation import translate
 from pre_question import pre_question
+from spelling import spelling
 
 language_path = {
 					'Somali':		"./data/testing_set/demo.txt",
@@ -96,10 +98,13 @@ def predict():
 
 	target = escape(target)#translate(escape(target),headers,languageToken=language_codes_ns[language])
 	prediction_score = calc_score(sentence, target)
+	spelling_score = spelling(sentence)
+	
 	# ouput the correlation function
 	return render_template(
 		"score.html", 
 		prediction_text = "{}".format(prediction_score), 
+		spelling_score = "{}".format(spelling_score),
 		sentence = "{}".format(sentence), 
 		target = "{}".format(target),
 		language = "{}".format(language),
