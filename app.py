@@ -7,17 +7,21 @@ from flask import (
 	render_template,
 	escape,
 	session,
+	redirect,
+	url_for,
 )
 import struct
 import sqlite3
 import base64
 from functools import lru_cache
 #from flask_ngrok import run_with_ngrok
+from werkzeug import secure_filename
 import time
 import requests
 import json
 import argparse
 import random
+import os
 
 from calc_score import calc_score
 from get_translation import translate
@@ -40,12 +44,14 @@ language_codes_ns = {
 					'Ukrainian':'uk'
 					}
 
-
+UPLOAD_FOLDER = '/path/to/the/uploads'
+ALLOWED_EXTENSIONS = set(['pdf'])
 
 url = 'https://platform.neuralspace.ai/api/translation/v1/annotated/translate'
 headers = {}
 
 flask_app = Flask(__name__)
+flask_app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 flask_app.secret_key = 'any random string'
 #run_with_ngrok(flask_app)
 
@@ -99,7 +105,7 @@ def predict():
 	target = escape(target)#translate(escape(target),headers,languageToken=language_codes_ns[language])
 	prediction_score = calc_score(sentence, target)
 	spelling_score = spelling(sentence)
-	
+
 	# ouput the correlation function
 	return render_template(
 		"score.html", 
@@ -110,6 +116,27 @@ def predict():
 		language = "{}".format(language),
 		index = "{}".format(str(index))
 		)
+
+
+def allowed_file(filename):
+	return '.' in filename and \
+	filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+
+@flask_app.route('/upload_files/', methods=['GET', 'POST'])
+def upload_file():
+	if request.method == 'POST':
+		file = request.files['file']
+		if file and allowed_file(file.filename):
+			# Make sure the filename is valid
+			filename = secure_filename(file.filename)
+			# Should we save the uploaded file
+			#file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			
+			#Process files
+			#filename = func(filename)
+			return redirect(url_for('uploaded_file',filename=filename))
+
 
 @flask_app.route("/files/")
 def render_the_files_page():
