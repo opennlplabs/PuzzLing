@@ -96,6 +96,9 @@ def predict():
 	index = request.args.get('index', -1)
 	index = int(index)
 
+	if sentence is None:
+		raise ValueError('No inputs')
+
 	if index <= 0:
 		raise ValueError('Index should be larger than 0')
 
