@@ -15,7 +15,7 @@ import sqlite3
 import base64
 from functools import lru_cache
 #from flask_ngrok import run_with_ngrok
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 import time
 import requests
 import json
