@@ -64,11 +64,11 @@ def test():
     #     text = form.text.data
     #     target = ref_answer
     #     form.text.data = ""
-    
+
     return render_template(
         "home/test.html",
         question=question,
-        target = ref_answer,
+        target=ref_answer,
         language="{}".format(language),
         index="{}".format(str(idx)),
         # text=text,
@@ -83,34 +83,35 @@ def test():
 @blueprint.route("/score.html", methods=['GET', 'POST'])
 @login_required
 def score():
-	sentence = request.form.get('inputText')
-	target = request.args.get('target')#request.args.get('question')
-	language = request.args.get('language', None)
-	index = request.args.get('index', -1)
-	index = int(index)
+    sentence = request.form.get('inputText')
+    target = request.args.get('target')  # request.args.get('question')
+    language = request.args.get('language', None)
+    index = request.args.get('index', -1)
+    index = int(index)
 
-	if sentence is None:
-		raise ValueError('No inputs')
+    if sentence is None:
+        raise ValueError('No inputs')
 
-	if index <= 0:
-		raise ValueError('Index should be larger than 0')
+    if index <= 0:
+        raise ValueError('Index should be larger than 0')
 
-	if language == None:
-		raise ValueError('Invalid Language')
-	target = ''.join([i for i in escape(target) if not i.isdigit()])#translate(escape(target),headers,languageToken=language_codes_ns[language])
-	prediction_score = calc_score(sentence, target)
-	spelling_score = spelling(sentence)
+    if language == None:
+        raise ValueError('Invalid Language')
+    target = ''.join([i for i in escape(target) if
+                      not i.isdigit()])  # translate(escape(target),headers,languageToken=language_codes_ns[language])
+    prediction_score = calc_score(sentence, target)
+    spelling_score = spelling(sentence)
 
-	# ouput the correlation function
-	return render_template(
-		"home/score.html", 
-		prediction_text = "{}".format(prediction_score), 
-		spelling_score = "{}".format(spelling_score),
-		sentence = "{}".format(sentence), 
-		target = "{}".format(target),
-		language = "{}".format(language),
-		index = "{}".format(str(index))
-		)
+    # ouput the correlation function
+    return render_template(
+        "home/score.html",
+        prediction_text="{}".format(prediction_score),
+        spelling_score="{}".format(spelling_score),
+        sentence="{}".format(sentence),
+        target="{}".format(target),
+        language="{}".format(language),
+        index="{}".format(str(index))
+    )
 
 
 @blueprint.route('/<template>')
