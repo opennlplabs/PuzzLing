@@ -11,7 +11,7 @@
 
 
     <div class="container-fluid py-4">
-            {% if text %}
+            <!-- {% if text %}
               <div class="row">
                   <p>--------------------------------This is Your Score Report--------------------------------</p>
                   <p>This is your <span id="count"></span>th question.</p>
@@ -31,24 +31,26 @@
                    target="_self"
                    href="./test.html">Next One!
                 </a>
-            {% else %}
-                <form method="POST">
-                    <div class="text-center">
-                        <h3 id="testing_question">
-                          {{ question }}
-                        </h3>
-                    </div>
+            {% else %} -->
+            <div class="text-center">
+                <h3 id="testing_question">
+                  {{ question }}
+                </h3>
+            </div>
+            <form action="{{ url_for('home_blueprint.score', target = target, language=language, question=question, index=index)}}" method="post">
+                <textarea name="inputText" class="textarea" rows="8" placeholder="Type your answer here!" autofocus="" onkeyup="countChars(this);" onfocus="collapsTextArea(this);"></textarea>
+                <div class="counter-container">
+                    <div id="counter" class="counter" style="text-align: center;"></div>
+                </div>
 
-                    {{ form.hidden_tag()}}
-
-                    {{ form.text.label(id='middle')  }}
-
-                    {{ form.text(rows="8", id='larger', class = "textarea") }}
-                    <br/>
-
-                    {{ form.submit(class = "btn btn-outline-primary btn-sm mb-0 me-3") }}
-
-                </form>
+                <div id="submission" style="text-align: center;">
+                    <a href="./score">
+                        <!-- href="../predict" -->
+                    <button type="submit" class="btn btn-outline-primary btn-sm mb-0 me-3">Submit</button>
+                    </a>
+                </div>
+            </form>
+                
             {% endif %}
 
 <!--            <div class="row">-->

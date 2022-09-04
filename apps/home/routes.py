@@ -4,6 +4,7 @@ Copyright (c) 2019 - present AppSeed.us
 Copyright (c) 2022 - Linguistics Justice League
 """
 
+from glob import escape
 from apps.home import blueprint
 from flask import render_template, request
 from flask_login import login_required
@@ -46,7 +47,7 @@ def test():
     with open(file_name, 'r', encoding="utf-8") as file:
         # randomly choose a sentence from the corpus set
         corpus_file = file.readlines()
-        idx: int | str = request.args.get('index', random.randint(0, len(corpus_file) - 1))
+        idx = request.args.get('index', random.randint(0, len(corpus_file) - 1))
         idx = int(idx)
         lines = corpus_file[idx]
         # this is the question set.
@@ -54,39 +55,62 @@ def test():
         # this is the reference answer part.
         ref_answer = lines.split("$")[0]
 
-    text = None
-    form = TextForm()
+    # text = None
+    # form = TextForm()
 
-    # Validate Form
-    if form.validate_on_submit():
-        # text is the user input answer
-        text = form.text.data
-        form.text.data = ""
-
+    # # Validate Form
+    # if form.validate_on_submit():
+    #     # text is the user input answer
+    #     text = form.text.data
+    #     target = ref_answer
+    #     form.text.data = ""
+    
     return render_template(
         "home/test.html",
-        question="{}".format(lines),
+        question=question,
+        target = ref_answer,
         language="{}".format(language),
         index="{}".format(str(idx)),
-        text=text,
-        form=form,
-        spelling="{:.2f}".format(spelling(str(text))),
-        # TODO there has some bugs in here.
-        semantic="{:.2f}".format(calc_score(str(text), question)),
-        ref_answer=ref_answer
+        # text=text,
+        # form=form,
+        # spelling="{:.2f}".format(spelling(str(text))) if text else None,
+        # # TODO there has some bugs in here.
+        # semantic="{:.2f}".format(calc_score(str(text), target)) if text else None,
+        # ref_answer=target
     )
 
 
 @blueprint.route("/score.html", methods=['GET', 'POST'])
 @login_required
 def score():
-    sentence = request.form.get('inputText')
-    target = request.args.get('question')
-    return render_template(
-        "home/score.html",
-        target="{}".format(target),
-        sentence="{}".format(sentence)
-    )
+	sentence = request.form.get('inputText')
+	target = request.args.get('target')#request.args.get('question')
+	language = request.args.get('language', None)
+	index = request.args.get('index', -1)
+	index = int(index)
+
+	if sentence is None:
+		raise ValueError('No inputs')
+
+	if index <= 0:
+		raise ValueError('Index should be larger than 0')
+
+	if language == None:
+		raise ValueError('Invalid Language')
+	target = ''.join([i for i in escape(target) if not i.isdigit()])#translate(escape(target),headers,languageToken=language_codes_ns[language])
+	prediction_score = calc_score(sentence, target)
+	spelling_score = spelling(sentence)
+
+	# ouput the correlation function
+	return render_template(
+		"home/score.html", 
+		prediction_text = "{}".format(prediction_score), 
+		spelling_score = "{}".format(spelling_score),
+		sentence = "{}".format(sentence), 
+		target = "{}".format(target),
+		language = "{}".format(language),
+		index = "{}".format(str(index))
+		)
 
 
 @blueprint.route('/<template>')

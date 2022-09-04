@@ -15,7 +15,8 @@
                     <p>--------------------------------This is Your Score Report--------------------------------</p>
                     <p>Source language: {{ language }} </p>
                     <p>This is your answer: {{ sentence }} </p>
-                    <p>Spelling Score: {{ prediction_text }} </p>
+                    <p>Correct Answer: {{ target }} </p>
+                    <p>Spelling Score: {{ spelling_score }} </p>
                     <p>Grammar Score: {{ prediction_text }} </p>
                     <p>Semantics Score: {{ prediction_text }} </p>
                     <p>The Overall Score: {{ prediction_text }} </p>
@@ -23,7 +24,7 @@
                       <a class="btn btn-outline-primary btn-sm mb-0 me-3"
 
                        target="_self"
-                       href="./test.html">Contiue
+                       href="./test.html">Continue
                     </a>
           {% include "includes/footer.html" %}
 
