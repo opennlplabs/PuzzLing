@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'PuzzLingNew'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A486608D19014B789439C173A171617E }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_561A7D8CD0124E7AACB8BEBCD2DE20C3 }}
