@@ -16,7 +16,7 @@ def spelling(s):
 		score.append(spelling_score(i, res))
 		correct_words.append(res)
 
-	return sum(score) / len(score)
+	return sum(score) / (len(score)) if len(score) !=0 else 0
 
 def spelling_score(source: str, target: str):
 	s_len = len(source)

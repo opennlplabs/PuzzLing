@@ -29,11 +29,11 @@ from pre_question import pre_question
 from spelling import spelling
 
 language_path = {
-					'Somali':		"./data/testing_set/demo.txt",
-					'Xhosa':		"./data/testing_set/demo.txt",
-					'Pashto':		"./data/testing_set/pashto/pashto.txt",
-					'Twi':			"./data/testing_set/demo.txt",
-					'Ukrainian':	"./data/testing_set/demo.txt"
+				'Somali':		"./data/testing_set/demo.txt",
+				'Xhosa':		"./data/testing_set/demo.txt",
+				'Pashto':		"./data/testing_set/pashto/pashto.txt",
+				'Twi':			"./data/testing_set/demo.txt",
+				'Ukrainian':	"./data/testing_set/demo.txt"
 				}
 
 language_codes_ns = {
@@ -47,7 +47,6 @@ language_codes_ns = {
 UPLOAD_FOLDER = '/path/to/the/uploads'
 ALLOWED_EXTENSIONS = set(['pdf'])
 
-url = 'https://platform.neuralspace.ai/api/translation/v1/annotated/translate'
 headers = {}
 
 flask_app = Flask(__name__)
@@ -75,9 +74,8 @@ def Home():
 		# return the question on the frontend
 		question = lines
 		# do the pre_processing of the question and return
-		# question = pre_question(lines)
+		question = pre_question(lines)
 
-	#session['question'] = question
 	# render the question into the index web
 	return render_template(
 		"index.html", 
@@ -105,7 +103,8 @@ def predict():
 	if language == None:
 		raise ValueError('Invalid Language')
 
-	target = escape(target)#translate(escape(target),headers,languageToken=language_codes_ns[language])
+	target = translate(escape(target),headers,languageToken=language_codes_ns[language]) 
+	#escape(target)
 	prediction_score = calc_score(sentence, target)
 	spelling_score = spelling(sentence)
 
