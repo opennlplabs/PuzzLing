@@ -3,14 +3,14 @@ import json
 
 url = 'https://platform.neuralspace.ai/api/translation/v1/annotated/translate'
 
-def translate(sentence, headers, languageToken="zh-CN"):
+def translate(sentence, headers, languageToken="zh-CN", targetLanguage="en"):
 	"""Get the translations response from the Neural Space API"""
 	passedValue = sentence.encode('utf-8').decode('latin1')
 	data = f"""
 	{{
 		"text": "{passedValue}",
 		"sourceLanguage":"{languageToken}",
-		"targetLanguage": "en"
+		"targetLanguage":"{targetLanguage}"
 	}}
 	"""
 	resp = requests.post(url, headers=headers, data=data)

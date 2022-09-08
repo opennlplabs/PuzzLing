@@ -75,7 +75,9 @@ def Home():
 		question = lines
 		# do the pre_processing of the question and return
 		question = pre_question(lines)
-
+		print("Before translation: ", question)
+		question = translate(question,headers,languageToken='en', targetLanguage=language_codes_ns[language]) 
+		print("After translation: ", question)
 	# render the question into the index web
 	return render_template(
 		"index.html", 
