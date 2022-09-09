@@ -5,6 +5,8 @@ Copyright (c) 2022 - Linguistics Justice League
 """
 
 from glob import escape
+
+from apps import login_manager
 from apps.home import blueprint
 from flask import render_template, request
 from flask_login import login_required
@@ -18,6 +20,9 @@ from wtforms import TextAreaField
 from wtforms.widgets import TextArea
 from getSemanticScore import calc_score
 from getSpellingScore import spelling
+from flask_login import current_user
+import sqlite3
+import os.path
 
 
 # Creat a form class for user input text
@@ -86,31 +91,44 @@ def score():
     sentence = request.form.get('inputText')
     target = request.args.get('target')  # request.args.get('question')
     language = request.args.get('language', None)
-    index = request.args.get('index', -1)
-    index = int(index)
+    # index = request.args.get('index', -1)
+    # index = int(index)
+    #
+    # if sentence is None:
+    #     raise ValueError('No inputs')
 
-    if sentence is None:
-        raise ValueError('No inputs')
+    # if index <= 0:
+    #     raise ValueError('Index should be larger than 0')
 
-    if index <= 0:
-        raise ValueError('Index should be larger than 0')
-
-    if language == None:
-        raise ValueError('Invalid Language')
+    # if language is None:
+    #     raise ValueError('Invalid Language')
     target = ''.join([i for i in escape(target) if
                       not i.isdigit()])  # translate(escape(target),headers,languageToken=language_codes_ns[language])
-    prediction_score = calc_score(sentence, target)
-    spelling_score = spelling(sentence)
+    semantics_score = round(calc_score(sentence, target), 3)
 
-    # ouput the correlation function
+    spelling_score = round(spelling(sentence), 3)
+
+    overall_score = round((semantics_score * 0.7) + (spelling_score * 0.3), 3)
+
+    # Update the User score into the database.
+    db = sqlite3.connect("C:\\Users\\ABC\\Desktop\\PuzzLing-and-Scoring\\apps\\db.sqlite3")
+    cur = db.cursor()
+    if current_user.score is None:
+        cur.execute("UPDATE Users SET score =?  WHERE id = ?", (overall_score, current_user.id))
+        db.commit()
+    else:
+        cur.execute("UPDATE Users SET score =?  WHERE id = ?",
+                    (round(current_user.score + overall_score, 3), current_user.id))
+        db.commit()
+
     return render_template(
         "home/score.html",
-        prediction_text="{}".format(prediction_score),
-        spelling_score="{}".format(spelling_score),
         sentence="{}".format(sentence),
         target="{}".format(target),
         language="{}".format(language),
-        index="{}".format(str(index))
+        spelling_score="{}".format(spelling_score),
+        semantics_score="{}".format(semantics_score),
+        overall_score="{}".format(str(overall_score))
     )
 
 
