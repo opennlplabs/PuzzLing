@@ -14,7 +14,6 @@ import struct
 import sqlite3
 import base64
 from functools import lru_cache
-#from flask_ngrok import run_with_ngrok
 from werkzeug.utils import secure_filename
 import time
 import requests
@@ -29,12 +28,12 @@ from pre_question import pre_question
 from spelling import spelling
 
 language_path = {
-				'Somali':		"./data/testing_set/demo.txt",
-				'Xhosa':		"./data/testing_set/demo.txt",
-				'Pashto':		"./data/testing_set/pashto/pashto.txt",
-				'Twi':			"./data/testing_set/demo.txt",
-				'Ukrainian':	"./data/testing_set/demo.txt"
-				}
+				'Somali':	"./data/testing_set/demo.txt",
+				'Xhosa':	"./data/testing_set/demo.txt",
+				'Pashto':	"./data/testing_set/demo.txt",
+				'Twi':		"./data/testing_set/demo.txt",
+				'Ukrainian':"./data/testing_set/demo.txt"
+				}#"./data/testing_set/pashto/pashto.txt",
 
 language_codes_ns = {
 					'Somali':'so', 
@@ -52,7 +51,6 @@ headers = {}
 flask_app = Flask(__name__)
 flask_app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 flask_app.secret_key = 'any random string'
-#run_with_ngrok(flask_app)
 
 
 @flask_app.route("/", methods=['GET', 'POST'])
@@ -153,6 +151,7 @@ def page_not_found(e):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--auth_token', help='authorization token to NeuralSpace', default = '')
+	parser.add_argument('--test', help='testing model', action='store_true')
 	opt = parser.parse_args()
 
 	auth_token = opt.auth_token
@@ -161,7 +160,13 @@ if __name__ == "__main__":
 	headers["authorization"] = auth_token
 	headers["Content-Type"] = "application/json;charset=UTF-8"
 
-	flask_app.run(debug=True)
+	if opt.test:
+		from flask_ngrok import run_with_ngrok
+		run_with_ngrok(flask_app)
+		flask_app.run()
+		
+	else:
+		flask_app.run(debug=True)
 
 
 
