@@ -8,16 +8,19 @@ def convert(s):
 
 
 def spelling(s):
-    words = convert(s)
+    try:
+        words = convert(s)
 
-    correct_words = []
-    score = []
-    for i in words:
-        res = str(TextBlob(i).correct())
-        score.append(spelling_score(i, res))
-        correct_words.append(res)
-
-    return sum(score) / len(score)
+        correct_words = []
+        score = []
+        for i in words:
+            res = str(TextBlob(i).correct())
+            score.append(spelling_score(i, res))
+            correct_words.append(res)
+        output_score = sum(score) / len(score)
+    except ZeroDivisionError:
+        output_score = 0
+    return output_score
 
 
 def spelling_score(source, target):
