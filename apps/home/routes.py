@@ -88,6 +88,12 @@ def score():
         sentence="{}".format(sentence)
     )
 
+@blueprint.route("/files.html", methods=['GET', 'POST'])
+@login_required
+def files():
+    return render_template(
+        'home/files.html'
+    )
 
 @blueprint.route('/<template>')
 @login_required

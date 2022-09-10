@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Wordulang Text! {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <main>
+        <div style="text-align: center;">
+            <img src="../../../file-pdf.svg" alt="printing" width="56" height="56" fill="currentColor">
+        </div>
+        <label class="form-label" for="customFile">Upload your .pdf Files!</label>
+        <input type="file" class="form-control mt-2 ml-5" id="customFile" style="max-width: 800px;" />
+
+        <input class="btn btn-outline-primary btn-sm my-2 ml-5 me-3" id="submit" name="submit" type="submit" value="Submit">
+
+    </main>
+
+    {% endblock content %}
+    
+    <!-- Specific JS goes HERE -->
+    {% block javascripts %}{% endblock javascripts %}
+
+
+
