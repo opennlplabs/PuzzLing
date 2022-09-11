@@ -18,7 +18,8 @@ def spelling(s):
 
 	return sum(score) / (len(score)) if len(score) !=0 else 0
 
-def spelling_score(source: str, target: str):
+
+def dp(source: str, target: str):
 	s_len = len(source)
 	t_len = len(target)
 
@@ -44,6 +45,10 @@ def spelling_score(source: str, target: str):
 			mat[i][j] = min(mat[i-1][j-1]+cost, mat[i][j-1]+1, mat[i-1][j]+1)
 
 	return 1 - mat[-1][-1] / max(s_len, t_len)
+
+
+def spelling_score(source: str, target: str):
+	return dp(source, target)
 
 if __name__ == "__main__":
 	print(spelling("machine orageg"))

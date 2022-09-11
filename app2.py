@@ -26,6 +26,7 @@ from calc_score import calc_score
 from get_translation import translate
 from pre_question import pre_question
 from spelling import spelling
+from grammar import grammar
 
 language_path = {
 				'Somali':	"./data/testing_set/demo.txt",
@@ -105,12 +106,14 @@ def predict():
 	#escape(target)
 	prediction_score = calc_score(sentence, target)
 	spelling_score = spelling(sentence)
+	grammar_score = grammar(sentence)
 
 	# ouput the correlation function
 	return render_template(
 		"score.html", 
 		prediction_text = "{}".format(prediction_score), 
 		spelling_score = "{}".format(spelling_score),
+		grammar_score = "{}".format(grammar_score),
 		sentence = "{}".format(sentence), 
 		target = "{}".format(target),
 		language = "{}".format(language),
@@ -151,7 +154,7 @@ def page_not_found(e):
 if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--auth_token', help='authorization token to NeuralSpace', default = '')
-	parser.add_argument('--test', help='testing model', action='store_true')
+	parser.add_argument('--test', help='testing mode', action='store_true')
 	opt = parser.parse_args()
 
 	auth_token = opt.auth_token

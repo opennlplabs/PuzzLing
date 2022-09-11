@@ -2,4 +2,4 @@ flask
 torch
 transformers
 textblob
-werkzeug
+happytransformer
