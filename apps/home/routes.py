@@ -111,7 +111,9 @@ def score():
     overall_score = round((semantics_score * 0.7) + (spelling_score * 0.3), 3)
 
     # Update the User score into the database.
-    db = sqlite3.connect("C:\\Users\\ABC\\Desktop\\PuzzLing-and-Scoring\\apps\\db.sqlite3")
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    dbpath = os.path.join(os.path.dirname(basedir) , 'db.sqlite3')
+    db = sqlite3.connect(dbpath)
     cur = db.cursor()
     if current_user.score is None:
         cur.execute("UPDATE Users SET score =?  WHERE id = ?", (overall_score, current_user.id))
