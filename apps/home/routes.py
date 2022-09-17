@@ -18,6 +18,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from wtforms import TextAreaField
 from wtforms.widgets import TextArea
+from apps.home.lang_enum import Language
 from getSemanticScore import calc_score
 from getSpellingScore import spelling
 from flask_login import current_user
@@ -47,8 +48,21 @@ def index():
 @login_required
 def test():
     # read the testing corpus from the data/testing_set dir
-    language = request.args.get('language', 'Somali')
-    file_name = "data/testing_set/pashto/pashto.txt"
+    basedir = os.path.abspath(os.path.dirname(__file__))
+    dbpath = os.path.join(os.path.dirname(basedir) , 'db.sqlite3')
+    db = sqlite3.connect(dbpath)
+    cur = db.cursor()
+    cur.execute("SELECT u.language_id FROM Users u WHERE u.id = ?", (current_user.id,))
+    lang_id = cur.fetchone()[0]
+    print(lang_id)
+    if lang_id in [Language.Somali.value, Language.Pashto.value]:
+        language = request.args.get('language', Language(lang_id).name)
+        file_name = "data/testing_set/" + language+ "/" + language + ".txt"
+    else:
+        language = request.args.get('language', Language(1).name)
+        file_name = "data/testing_set/" + language+ "/" + language + ".txt"
+        
+    
     with open(file_name, 'r', encoding="utf-8") as file:
         # randomly choose a sentence from the corpus set
         corpus_file = file.readlines()

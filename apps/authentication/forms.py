@@ -31,7 +31,7 @@ class CreateAccountForm(FlaskForm):
     password = PasswordField('Password',
                              id='pwd_create',
                              validators=[DataRequired()])
-    language_id = SelectField(u'Language', choices=[(1, 'Swahili'), (2, 'Ukrainian'), (3, 'Pashto'),(4,'Hindi')])
+    language_id = SelectField(u'Language', choices=[(1, 'Somali'), (2, 'Ukrainian'), (3, 'Pashto'),(4,'Hindi')])
 
     score = StringField('score',
                         id='score_create')
