@@ -28,20 +28,66 @@ from pre_question import pre_question
 from spelling import spelling
 from grammar import grammar
 
-language_path = {
-				'Somali':	"./data/testing_set/demo.txt",
-				'Xhosa':	"./data/testing_set/demo.txt",
-				'Pashto':	"./data/testing_set/demo.txt",
-				'Twi':		"./data/testing_set/demo.txt",
-				'Ukrainian':"./data/testing_set/demo.txt"
-				}#"./data/testing_set/pashto/pashto.txt",
+language_path = "./data/testing_set/demo.txt"
+# {
+# 				'Somali':	"./data/testing_set/demo.txt",
+# 				'Xhosa':	"./data/testing_set/demo.txt",
+# 				'Pashto':	"./data/testing_set/demo.txt",
+# 				'Twi':		"./data/testing_set/demo.txt",
+# 				'Ukrainian':"./data/testing_set/demo.txt",
+# 				'Amharic':"./data/testing_set/demo.txt"
+# 				}#"./data/testing_set/pashto/pashto.txt",
 
 language_codes_ns = {
-					'Somali':'so', 
-					'Xhosa':'xh', 
-					'Pashto':'ps', 
-					'Twi':'tw', 
-					'Ukrainian':'uk'
+	'Assamese':	'as',
+	'Bengali':	'bn',	'Gujarati':	'gu',
+'Hindi':	'hi',	'Kannada':	'kn',	'Malayalam':	'ml',
+'Marathi':	'mr',	'Nepali':	'ne',	'Odia (Oriya)':	'or',
+'Punjabi':	'pa',	'Sindhi':	'sd',	'Sinhala (Sinhalese)':	'si',
+'Tamil':	'ta',	'Telugu':	'te',	'Urdu': 'ur',
+'Burmese (Myanmar)':	'my',	'Cebuano':	'ceb',	'Dhivehi':	'dv',
+'Hmong':	'hmn',	'Indonesian':	'id',	'Javanese':	'jv',
+'Khmer':	'km',	'Malay':	'ms',	'Loa':	'lo',
+'Sundanese':	'su',	'Tagalog (Filipino)':	'tl',	'Thai':	'th',
+'Urdu':	'ur',	'Vietnamese':	'vi',
+'Arabic':	'ar',	'Hebrew':	'he',	'Pashto':	'ps',
+'Persian':	'fa',	'Uighur':	'ug',	'Turkmen':	'tk',
+'Armenian':	'hy',	'Azerbaijani':	'az',	'Chinese (Simplified)':	'zh-CN',
+'Chinese (Traditional)':	'zh-TW',	'Georgian':	'ka',	'Japanese':	'ja',
+'Kazakh':	'kk',	'Kirghiz':	'ky',	'Korean':	'ko',
+'Kurdish':	'ku',	'Kyrgyz':	'ky',	'Mongolian':	'mn',
+'Russian':	'ru',	'Tagalog':	'tl',	'Tajik':	'tg',
+'Tatar':	'tt',	'Uzbek':	'uz',
+'Afrikaans':	'af',	'Amharic': 'am',	'Bambara':	'bm',
+'English':	'en',	'French':	'fr',	'Hausa':	'ha',
+'Igbo':	'ig',	'Kinyarwanda':	'rw',	'Lingala':	'ln',
+'Malagasy':	'mg',	'Nyanja (Chichewa)':	'ny',	'Oromo':	'om',
+'Sesotho':	'st',	'Shona':	'sh',	'Somali':	'so',
+'Swahili':	'sw',	'Tigrinya':	'ti',	'Tsonga':	'ts',
+'Twi':	'tw',	'Xhosa':	'xh',	'Yoruba':	'yo',
+'Zulu':	'zu',
+'Albanian':	'sq',	'Aragonese':	'an',	'Bashkir':	'ba',
+'Basque':	'eu',	'Belarusian':	'be',	'Bosnian':	'bs',
+'Breton':	'br',	'Bulgarian':	'bg',	'Catalan':	'ca',
+'Chechen':	'ce',	'Chuvash':	'cv',	'Corsican':	'co',
+'Croatian':	'hr',	'Czech':	'cs',	'Danish':	'da',
+'Dutch':	'nl',	'English':	'en',	'Esperanto':	'eo',
+'Estonian':	'et',	'Finnish':	'fi',	'French':	'fr',
+'Frisian':	'fy',	'Galician':	'gl',	'German':	'de',
+'Greek':	'el',	'Hungarian':	'hu',	'Icelandic':	'is',
+'Irish':	'ga',	'Italian':	'it',	'Latin':	'la',
+'Latvian':	'lv', 'Lithuanian':	'lt',	'Luxembourgish':	'lb',
+'Macedonian':	'mk',	'Maltese':	'mt',	'Norwegian Bokmål':	'nb',
+'Occitan':	'oc',	'Polish':	'pl',	'Portuguese':	'pt',
+'Romanian':	'ro',	'Scots Gaelic':	'gd',	'Serbian':	'sr',
+'Slovak':	'sk',	'Slovenian':	'sl',	'Spanish':	'es',
+'Swedish':	'sv',	'Turkish':	'tr',	'Ukrainian':	'uk',
+'Welsh':	'cy',	'Yiddish':	'yi',
+'Aymara':	'ay',	'Dutch':	'nl',	'English':	'en',
+'French':	'fr',	'Guarani':	'gn',	'Haitian':	'ht',
+'Hawaiian':	'haw',	'Portuguese':	'pt',	'Quechua':	'qu',
+'Samoan':	'sm',	'Spanish':	'es',	'Yiddish':	'yi',
+'Maori':	'mi'
 					}
 
 UPLOAD_FOLDER = '/path/to/the/uploads'
@@ -58,7 +104,7 @@ flask_app.secret_key = 'any random string'
 def Home():
 	# read the testing corpus from the data/testing_set dir
 	language = request.args.get('language', 'Somali')
-	file_name = language_path[language]
+	file_name = language_path
 
 	with open(file_name, 'r', encoding = "utf-8") as file:
 		# randomly choose a sentence from the corpus set

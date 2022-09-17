@@ -218,6 +218,12 @@ a:hover {
 nav {
     font-size: 1.2rem;
 }
+
+.dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
 .time-values {
     font-size: 1.2rem;
     font-weight: 700;
